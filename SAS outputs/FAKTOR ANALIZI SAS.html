@@ -1,0 +1,2219 @@
+<html>
+<meta charset="UTF-8">
+<style>
+body { 
+font-family: 'Lato', sans-serif !important;
+font-size: 14px!important;
+color: #353535;
+background-color: #f0f1f2;
+background: #f0f1f2;
+}
+</style>
+<title>
+Program Summary - Program 2
+</title>
+<body>
+<center>
+<h3>
+Program Summary - Program 2</center>
+<p><hr>
+<h3>Execution Environment</h3>
+<table border=0>
+<tr><td nowrap>Author:</td><td nowrap>u59814750</td></tr><tr><td nowrap>File:</td><td nowrap></td></tr><tr><td nowrap>SAS Platform:</td><td nowrap>Linux LIN X64 3.10.0-1062.9.1.el7.x86_64</td></tr><tr><td nowrap>SAS Host:</td><td nowrap>ODAWS01-EUW1.ODA.SAS.COM</td></tr><tr><td nowrap>SAS Version:</td><td nowrap>9.04.01M6P11072018</td></tr><tr><td nowrap>SAS Locale:</td><td nowrap>tr_TR</td></tr><tr><td nowrap>Submission Time:</td><td nowrap>30.01.2022 19:06:45</td></tr><tr><td nowrap>Browser Host:</td><td nowrap>178.233.117.30</td></tr><tr><td nowrap>User Agent:</td><td>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36</td></tr><tr><td nowrap>Application Server:</td><td nowrap>ODAMID00-EUW1.ODA.SAS.COM</td></tr>
+</table>
+</h3></center>
+<p><hr></hr>
+<link media="all" rel="stylesheet" href="https://odamid-euw1.oda.sas.com/SASStudio/proxy/308101.1.4.20210729104401_f0dms381p_pp/resources/js/dojo/dijit/themes/corporate/sce.css" /><div>
+<h3>Code: Program 2</h3>
+<div style="width: 807.344px; height: 672px;"><div tabindex="-1" role="application" class="textview sce sce-sas _textviewDOMReady" style="position: relative; overflow: hidden; width: 100%; height: 100%; text-size-adjust: 100%; line-height: normal;"><div class="textviewLeftRuler" tabindex="-1" aria-hidden="true" style="overflow: hidden; user-select: none; position: absolute; top: 0px; bottom: 0px; cursor: default; display: none;"></div><div class="textviewScroll" tabindex="-1" style="position: absolute; inset: 0px; border-width: 0px; margin: 0px; outline: none; background: transparent; overflow: hidden;"><div style="margin: 0px; border-width: 0px; padding: 0px; height: 648px; width: 803px;"></div></div><div class="textviewRightRuler" tabindex="-1" aria-hidden="true" style="overflow: hidden; user-select: none; position: absolute; top: 0px; bottom: 0px; cursor: default; display: none; right: 0px;"></div><div class="textviewInnerRightRuler" tabindex="-1" aria-hidden="true" style="overflow: hidden; user-select: none; position: absolute; top: 0px; bottom: 0px; cursor: default; display: none; z-index: 1; right: 0px;"></div><div class="textviewMarginRuler" tabindex="-1" aria-hidden="true" style="overflow: hidden; user-select: none; position: absolute; top: 0px; bottom: 0px; cursor: default; display: none; z-index: 4; left: 2px;"></div><div style="position: absolute; overflow: hidden; margin: 0px; border-width: 0px; padding: 0px; background: transparent; inset: 0px 0px 4px;"><div style="position: absolute; height: 1px; top: -1000px; background: transparent; width: 803px;"></div><div class="textviewContent" tabindex="0" spellcheck="false" contenteditable="true" style="position: absolute; border-width: 0px; margin: 0px; padding: 0px; outline: none; z-index: 1; user-select: text; white-space: pre; overflow-wrap: normal; tab-size: 4; left: 2px; top: 4px; width: 803px; height: 664px;"><div><span class="comment">/* Generated Code (IMPORT) */</span><span> </span></div><div><span class="comment">/* Source File: breast_canser_data.csv */</span><span> </span></div><div><span class="comment">/* Source Path: /home/u59814750/ecem_breast_canser_data */</span><span> </span></div><div><span class="comment">/* Code generated on: 30.01.2022 18:50 */</span><span> </span></div><div><span> </span></div><div><span class="macro-ref">%web_drop_table</span><span class="sep">(</span><span class="text">WORK.IMPORT1</span><span class="sep">);</span><span> </span></div><div><span> </span></div><div><span> </span></div><div><span class="keyword">FILENAME</span><span class="text"> REFFILE </span><span class="string">'/home/u59814750/ecem_breast_canser_data/breast_canser_data.csv'</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">PROC</span><span class="text"> </span><span class="sec-keyword">IMPORT</span><span class="text"> </span><span class="keyword">DATAFILE</span><span class="sep">=</span><span class="text">REFFILE</span><span> </span></div><div><span class="text">	</span><span class="keyword">DBMS</span><span class="sep">=</span><span class="text">CSV</span><span> </span></div><div><span class="text">	</span><span class="keyword">OUT</span><span class="sep">=</span><span class="text">WORK.IMPORT1</span><span class="sep">;</span><span> </span></div><div><span class="text">	</span><span class="keyword">GETNAMES</span><span class="sep">=</span><span class="text">YES</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">RUN</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">PROC</span><span class="text"> </span><span class="sec-keyword">CONTENTS</span><span class="text"> </span><span class="keyword">DATA</span><span class="sep">=</span><span class="text">WORK.IMPORT1</span><span class="sep">;</span><span class="text"> </span><span class="sec-keyword">RUN</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div><span> </span></div><div><span class="macro-ref">%web_open_table</span><span class="sep">(</span><span class="text">WORK.IMPORT1</span><span class="sep">);</span><span> </span></div><div class=" block-mark"><span class="sec-keyword">proc</span><span class="text"> </span><span class="sec-keyword">factor</span><span class="text"> </span><span class="keyword">data</span><span class="sep">=</span><span class="text">WORK.IMPORT1 </span><span class="comment">/*name of data file*/</span><span class="text">   </span><span> </span></div><div><span class="text"> </span><span class="keyword">out</span><span class="sep">=</span><span class="text">skorlar  </span><span> </span></div><div><span class="text"> </span><span class="keyword">nobs</span><span class="sep">=</span><span class="numeric">321</span><span class="text">  </span><span> </span></div><div><span class="text"> </span><span class="keyword">method</span><span class="sep">=</span><span class="text">principal   </span><span> </span></div><div><span class="text"> </span><span class="keyword">nfactors</span><span class="sep">=</span><span class="numeric">2</span><span class="text">   </span><span> </span></div><div><span class="text"> </span><span class="keyword">maxiter</span><span class="text"> </span><span class="sep">=</span><span class="text"> </span><span class="numeric">25</span><span class="text">   </span><span> </span></div><div><span class="text"> </span><span class="keyword">rotate</span><span class="sep">=</span><span class="text">varimax    </span><span> </span></div><div><span class="keyword">msa</span><span class="text">  </span><span> </span></div><div><span class="text"> </span><span class="keyword">scree</span><span class="text">   </span><span> </span></div><div><span class="text"> </span><span class="keyword">res</span><span class="text">   </span><span> </span></div><div><span class="text"> </span><span class="keyword">preplot</span><span class="text">  </span><span> </span></div><div><span class="text"> </span><span class="keyword">plot</span><span class="text">  </span><span> </span></div><div><span class="keyword">heywood</span><span class="sep">;</span><span class="text">  </span><span> </span></div><div><span class="keyword">var</span><span class="text"> Protein1 Protein2 Protein3 Protein4</span><span class="sep">;</span><span class="text">   </span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span class="text">  </span><span> </span></div><div><span class="text">  </span><span> </span></div></div><div class="textviewSelectionUnfocused" style="position: absolute; border-width: 0px; margin: 0px; padding: 0px; outline: none; width: 0px; height: 0px; z-index: 0; visibility: visible;"></div><div class="textviewSelectionUnfocused" style="position: absolute; border-width: 0px; margin: 0px; padding: 0px; outline: none; width: 0px; height: 0px; z-index: 0;"></div><div class="textviewSelectionUnfocused" style="position: absolute; border-width: 0px; margin: 0px; padding: 0px; outline: none; width: 0px; height: 0px; z-index: 0;"></div></div></div></div></div>
+<div>
+<hr><h3>Log: Program 2</h3>
+<style>
+.sasError{color:red}
+.sasMessage{color:#000}
+.sasWarning{color:#008000}
+.sasSource{color:#000}
+.sasNote{color:#00f}
+</style><p>Notes (14)</p>
+<div {'style':display:none;height:0px'}="" charset="UTF-8"></div><div {'style':display:none;height:0px'}="" rel="stylesheet" href="./log.css"></div><style rel="stylesheet">.sasError {color: red;}.sasMessage{color:#000000;}.sasWarning{color:green;}.sasSource{color:#000000;}.sasNote {color:blue;}</style><div {'style':display:none;height:0px'}log:program="" 2<="" div=""><pre class="sasLog" id="pre_sasLog_88197" style="background-color:transparent; -webkit-user-select: text; -webkit-user-modify: read-only;-webkit-touch-callout: default;border-top-width: 0px;border-bottom-width: 0px"><div><div class="sasSource"> </div><div class="sasSource"> 1          OPTIONS NONOTES NOSTIMER NOSOURCE NOSYNTAXCHECK;</div><div class="sasSource"> 68         </div><div class="sasSource"> 69         /* Generated Code (IMPORT) */</div><div class="sasSource"> 70         /* Source File: breast_canser_data.csv */</div><div class="sasSource"> 71         /* Source Path: /home/u59814750/ecem_breast_canser_data */</div><div class="sasSource"> 72         /* Code generated on: 30.01.2022 18:50 */</div><div class="sasSource"> 73         </div><div class="sasSource"> 74         %web_drop_table(WORK.IMPORT1);</div><div class="sasNote" id="sasLogNote1_1643558804650"> NOTE: Table WORK.IMPORT1 has been dropped.</div><div class="sasNote" id="sasLogNote2_1643558804650"> NOTE: PROCEDURE SQL used (Total process time):</div><div class="sasNote">       real time           0.00 seconds</div><div class="sasNote">       user cpu time       0.00 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              218.96k</div><div class="sasNote">       OS Memory           29864.00k</div><div class="sasNote">       Timestamp           30.01.2022 04:06:44 PM</div><div class="sasNote">       Step Count                        138  Switch Count  2</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     14</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        9</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           0</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 75         </div><div class="sasSource"> 76         </div><div class="sasSource"> 77         FILENAME REFFILE '/home/u59814750/ecem_breast_canser_data/breast_canser_data.csv';</div><div class="sasSource"> 78         </div><div class="sasSource"> 79         PROC IMPORT DATAFILE=REFFILE</div><div class="sasSource"> 80         DBMS=CSV</div><div class="sasSource"> 81         OUT=WORK.IMPORT1;</div><div class="sasSource"> 82         GETNAMES=YES;</div><div class="sasSource"> 83         RUN;</div><div class="sasNote"> </div><div class="sasSource"> NOTE: Unable to open parameter catalog: SASUSER.PARMS.PARMS.SLIST in update mode. Temporary parameter values will be saved to </div><div class="sasSource"> WORK.PARMS.PARMS.SLIST.</div><div class="sasSource"> 84          /**********************************************************************</div><div class="sasSource"> 85          *   PRODUCT:   SAS</div><div class="sasSource"> 86          *   VERSION:   9.4</div><div class="sasSource"> 87          *   CREATOR:   External File Interface</div><div class="sasSource"> 88          *   DATE:      30JAN22</div><div class="sasSource"> 89          *   DESC:      Generated SAS Datastep Code</div><div class="sasSource"> 90          *   TEMPLATE SOURCE:  (None Specified.)</div><div class="sasSource"> 91          ***********************************************************************/</div><div class="sasSource"> 92             data WORK.IMPORT1    ;</div><div class="sasSource"> 93             %let _EFIERR_ = 0; /* set the ERROR detection macro variable */</div><div class="sasSource"> 94             infile REFFILE delimiter = ',' MISSOVER DSD  firstobs=2 ;</div><div class="sasSource"> 95                informat Age best32. ;</div><div class="sasSource"> 96                informat Gender $6. ;</div><div class="sasSource"> 97                informat Protein1 best32. ;</div><div class="sasSource"> 98                informat Protein2 best32. ;</div><div class="sasSource"> 99                informat Protein3 best32. ;</div><div class="sasSource"> 100               informat Protein4 best32. ;</div><div class="sasSource"> 101               informat Tumour_Stage $3. ;</div><div class="sasSource"> 102               informat Histology $30. ;</div><div class="sasSource"> 103               informat ER_status $8. ;</div><div class="sasSource"> 104               informat PR_status $8. ;</div><div class="sasSource"> 105               informat HER1_status best32. ;</div><div class="sasSource"> 106               informat Surgery_type $27. ;</div><div class="sasSource"> 107               informat Patient_Status $5. ;</div><div class="sasSource"> 108               format Age best12. ;</div><div class="sasSource"> 109               format Gender $6. ;</div><div class="sasSource"> 110               format Protein1 best12. ;</div><div class="sasSource"> 111               format Protein2 best12. ;</div><div class="sasSource"> 112               format Protein3 best12. ;</div><div class="sasSource"> 113               format Protein4 best12. ;</div><div class="sasSource"> 114               format Tumour_Stage $3. ;</div><div class="sasSource"> 115               format Histology $30. ;</div><div class="sasSource"> 116               format ER_status $8. ;</div><div class="sasSource"> 117               format PR_status $8. ;</div><div class="sasSource"> 118               format HER1_status best12. ;</div><div class="sasSource"> 119               format Surgery_type $27. ;</div><div class="sasSource"> 120               format Patient_Status $5. ;</div><div class="sasSource"> 121            input</div><div class="sasSource"> 122                        Age</div><div class="sasSource"> 123                        Gender  $</div><div class="sasSource"> 124                        Protein1</div><div class="sasSource"> 125                        Protein2</div><div class="sasSource"> 126                        Protein3</div><div class="sasSource"> 127                        Protein4</div><div class="sasSource"> 128                        Tumour_Stage  $</div><div class="sasSource"> 129                        Histology  $</div><div class="sasSource"> 130                        ER_status  $</div><div class="sasSource"> 131                        PR_status  $</div><div class="sasSource"> 132                        HER1_status</div><div class="sasSource"> 133                        Surgery_type  $</div><div class="sasSource"> 134                        Patient_Status  $</div><div class="sasSource"> 135            ;</div><div class="sasSource"> 136            if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */</div><div class="sasSource"> 137            run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote3_1643558804650"> NOTE: The infile REFFILE is:</div><div class="sasNote">       Filename=/home/u59814750/ecem_breast_canser_data/breast_canser_data.csv,</div><div class="sasNote">       Owner Name=u59814750,Group Name=oda,</div><div class="sasNote">       Access Permission=-rw-r--r--,</div><div class="sasNote">       Last Modified=30 Ocak 2022 18:50:47,</div><div class="sasNote">       File Size (bytes)=38147</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote4_1643558804650"> NOTE: 321 records were read from the infile REFFILE.</div><div class="sasNote">       The minimum record length was 98.</div><div class="sasNote">       The maximum record length was 133.</div><div class="sasNote" id="sasLogNote5_1643558804650"> NOTE: The data set WORK.IMPORT1 has 321 observations and 13 variables.</div><div class="sasNote" id="sasLogNote6_1643558804650"> NOTE: DATA statement used (Total process time):</div><div class="sasNote">       real time           0.00 seconds</div><div class="sasNote">       user cpu time       0.00 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              9417.75k</div><div class="sasNote">       OS Memory           34852.00k</div><div class="sasNote">       Timestamp           30.01.2022 04:06:44 PM</div><div class="sasNote">       Step Count                        139  Switch Count  2</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     139</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        11</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           272</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 321 rows created in WORK.IMPORT1 from REFFILE.</div><div class="sasSource">   </div><div class="sasSource">   </div><div class="sasSource">   </div><div class="sasNote" id="sasLogNote7_1643558804650"> NOTE: WORK.IMPORT1 data set was successfully created.</div><div class="sasNote" id="sasLogNote8_1643558804650"> NOTE: The data set WORK.IMPORT1 has 321 observations and 13 variables.</div><div class="sasNote" id="sasLogNote9_1643558804650"> NOTE: PROCEDURE IMPORT used (Total process time):</div><div class="sasNote">       real time           0.06 seconds</div><div class="sasNote">       user cpu time       0.05 seconds</div><div class="sasNote">       system cpu time     0.01 seconds</div><div class="sasNote">       memory              9417.75k</div><div class="sasNote">       OS Memory           34852.00k</div><div class="sasNote">       Timestamp           30.01.2022 04:06:44 PM</div><div class="sasNote">       Step Count                        139  Switch Count  7</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     2709</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        72</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           288</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 138        </div><div class="sasSource"> 139        PROC CONTENTS DATA=WORK.IMPORT1; RUN;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote10_1643558804650"> NOTE: PROCEDURE CONTENTS used (Total process time):</div><div class="sasNote">       real time           0.04 seconds</div><div class="sasNote">       user cpu time       0.05 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              1832.43k</div><div class="sasNote">       OS Memory           30128.00k</div><div class="sasNote">       Timestamp           30.01.2022 04:06:44 PM</div><div class="sasNote">       Step Count                        140  Switch Count  0</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     93</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        0</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           8</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 140        </div><div class="sasSource"> 141        </div><div class="sasSource"> 142        %web_open_table(WORK.IMPORT1);</div><div class="sasSource"> 143        proc factor data=WORK.IMPORT1 /*name of data file*/</div><div class="sasSource"> 144         out=skorlar</div><div class="sasSource"> 145         nobs=321</div><div class="sasSource"> 146         method=principal</div><div class="sasSource"> 147         nfactors=2</div><div class="sasSource"> 148         maxiter = 25</div><div class="sasSource"> 149         rotate=varimax</div><div class="sasSource"> 150        msa</div><div class="sasSource"> 151         scree</div><div class="sasSource"> 152         res</div><div class="sasSource"> 153         preplot</div><div class="sasSource"> 154         plot</div><div class="sasSource"> 155        heywood;</div><div class="sasSource"> 156        var Protein1 Protein2 Protein3 Protein4;</div><div class="sasSource"> 157        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote11_1643558804650"> NOTE: 2 factors will be retained by the NFACTOR criterion.</div><div class="sasNote" id="sasLogNote12_1643558804650"> NOTE: Rotation converged.  Criterion changed from 2.569903 to 6.213232 in 2 cycles.</div><div class="sasNote" id="sasLogNote13_1643558804650"> NOTE: The data set WORK.SKORLAR has 321 observations and 15 variables.</div><div class="sasNote" id="sasLogNote14_1643558804650"> NOTE: PROCEDURE FACTOR used (Total process time):</div><div class="sasNote">       real time           0.13 seconds</div><div class="sasNote">       user cpu time       0.13 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              1638.90k</div><div class="sasNote">       OS Memory           30388.00k</div><div class="sasNote">       Timestamp           30.01.2022 04:06:44 PM</div><div class="sasNote">       Step Count                        141  Switch Count  2</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     206</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        34</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           352</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 158        </div><div class="sasSource"> 159        </div><div class="sasSource"> 160        OPTIONS NONOTES NOSTIMER NOSOURCE NOSYNTAXCHECK;</div><div class="sasSource"> 170        </div></div></pre></div></div>
+<p>
+</div>
+<div>
+<hr><h3>Results: Program 2</h3>
+<div id="div_139f9cca-a2db-4a1b-86ca-99ef3beb824f" class="ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f">
+
+
+<meta charset="utf-8">
+<meta content="SAS 9.4" name="generator">
+<title>Results: Program 2</title>
+<style>
+/*<![CDATA[*/
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.c section > table, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.c section > pre, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.c div > table,
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.c div > pre, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.c article > table, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.c article > pre,
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.j section > table, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.j section > pre, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.j div > table,
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.j div > pre, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.j article > table, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.j article > pre,
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.c p.note, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.c p.warning, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.c p.error, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.c p.fatal,
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.j p.note, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.j p.warning, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.j p.error, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.j p.fatal,
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.c > table.layoutcontainer, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body.j > table.layoutcontainer { margin-left: auto; margin-right: auto }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.l table, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.l pre, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.l p.note,
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.l p.warning, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.l p.error, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.l p.fatal { margin-left: 0 }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.c table, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.c pre, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.c p.note,
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.c p.warning, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.c p.error, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.c p.fatal { margin-left: auto; margin-right: auto }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.r table, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.r pre, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.r p.note,
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.r table, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.r pre, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.r p.note,
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.r p.warning, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.r p.error, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion.r p.fatal { margin-right: 0 }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f article, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f aside, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f details, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f figcaption, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f figure, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f footer, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f header, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f hgroup, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f nav, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f section { display: block }
+html.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f { font-size: 100% }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body { margin: 1em; font-size: 13px; line-height: 1.231 }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f sup { position: relative; vertical-align: baseline; bottom: 0.25em; font-size: 0.8em }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f sub { position: relative; vertical-align: baseline; top: 0.25em; font-size: 0.8em }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f ul, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f ol { margin: 1em 0; padding: 0 0 0 40px }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f dd { margin: 0 0 0 40px }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f nav ul, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0 }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f img { border: 0; vertical-align: middle }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f svg:not(:root) { overflow: hidden }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f figure { margin: 0 }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f table { border-collapse: collapse; border-spacing: 0 }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutcontainer { border-collapse: separate; border-spacing: 0 }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f p { margin-top: 0; text-align: left }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f h1.heading1 { text-align: left }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f h2.heading2 { text-align: left }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f h3.heading3 { text-align: left }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f h4.heading4 { text-align: left }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f h5.heading5 { text-align: left }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f h6.heading6 { text-align: left }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f span { text-align: left }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f table { margin-bottom: 1em }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f td, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f th { text-align: left; padding: 3px 6px; vertical-align: top }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f td[class$="fixed"], .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f th[class$="fixed"] { white-space: pre }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f section, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f article { padding-top: 1px; padding-bottom: 8px }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f hr.pagebreak { height: 0px; border: 0; border-bottom: 1px solid #c0c0c0; margin: 1em 0 }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .stacked-value { text-align: left; display: block }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .stacked-cell > .stacked-value, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f td.data > td.data, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f th.data > td.data, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f th.data > th.data, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f td.data > th.data, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f th.header > th.header { border: 0 }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .stacked-cell > div.data { border-width: 0 }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systitleandfootercontainer { white-space: nowrap; margin-bottom: 1em }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systitleandfootercontainer > p { margin: 0 }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systitleandfootercontainer > p > span { display: inline-block; width: 100%; white-space: normal }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .batch { display: table }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .toc { display: none }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .proc_note_group, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .proc_title_group { margin-bottom: 1em }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f p.proctitle { margin: 0 }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f p.note, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f p.warning, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f p.error, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f p.fatal { display: table }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .notebanner, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .warnbanner, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .errorbanner, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .fatalbanner,
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .notecontent, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .warncontent, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .errorcontent, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .fatalcontent { display: table-cell; padding: 0.5em }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .notebanner, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .warnbanner, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .errorbanner, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .fatalbanner { padding-right: 0 }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body > div > ol li { text-align: left }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .beforecaption > h4 { margin-top: 0; margin-bottom: 0 }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .c { text-align: center }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .r { text-align: right }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .l { text-align: left }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .j { text-align: justify }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .d { text-align: right }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .b { vertical-align: bottom }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .m { vertical-align: middle }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .t { vertical-align: top }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .accessiblecaption {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f a:active { color: #800080 }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .aftercaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 4pt;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .batch > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .batch > tbody, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .batch > thead, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .batch > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .batch { border: hidden; }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .batch {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    padding: 7px;
+    }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .beforecaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .body {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .bodydate {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: top;
+    width: 100%;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .bycontentfolder {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .byline {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .bylinecontainer > col, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .bylinecontainer > colgroup > col, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .bylinecontainer > colgroup, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .bylinecontainer > tr, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .bylinecontainer > * > tr, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .bylinecontainer > thead, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .bylinecontainer > tbody, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .bylinecontainer > tfoot { border: none; }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .bylinecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .caption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .cell, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .container {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .contentfolder, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .contentitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .contentproclabel, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .contentprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .contents {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .contentsdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .contenttitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .continued {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    width: 100%;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .data, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .dataemphasis {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .dataemphasisfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .dataempty {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .datafixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .datastrong {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .datastrongfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .date {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .document {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .errorbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .errorcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .errorcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .extendedpage {
+    background-color: #fafbfe;
+    border-style: solid;
+    border-width: 1pt;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .fatalbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .fatalcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .fatalcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .folderaction {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .footer {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .footeremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .footeremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .footerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .footerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .footerstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .footerstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .frame {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .graph > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .graph > tbody, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .graph > thead, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .graph > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .graph { border: hidden; }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .graph {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .header {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .headeremphasis {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .headeremphasisfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .headerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .headerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .headersandfooters {
+    background-color: #edf2f9;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .headerstrong {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .headerstrongfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .heading1, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .heading2, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .heading3, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .heading4, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .heading5, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .heading6 { font-family: Arial, Helvetica, sans-serif }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .index {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .indexaction, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .indexitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .indexprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .indextitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutcontainer, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .layoutregion {
+    border-width: 0;
+    border-spacing: 30px;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .linecontent {
+    background-color: #fafbfe;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f a:link { color: #0000ff }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .list {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .list10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .list2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .list3, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .list4, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .list5, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .list6, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .list7, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .list8, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .list9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .listitem {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .listitem10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .listitem2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .listitem3, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .listitem4, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .listitem5, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .listitem6, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .listitem7, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .listitem8, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .listitem9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .note {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .notebanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .notecontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .notecontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .output > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .output > tbody, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .output > thead, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .output > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .output { border: hidden; }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .output {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .pageno {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .pages {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .pagesdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .pagesitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .pagesproclabel, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .pagesprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .pagestitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .paragraph {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .parskip > col, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .parskip > colgroup > col, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .parskip > colgroup, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .parskip > tr, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .parskip > * > tr, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .parskip > thead, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .parskip > tbody, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .parskip > tfoot { border: none; }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .parskip {
+    border: none;
+    border-spacing: 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .prepage {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .proctitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .proctitlefixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .rowfooter {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .rowfooteremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .rowfooteremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .rowfooterempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .rowfooterfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .rowfooterstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .rowfooterstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .rowheader {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .rowheaderemphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .rowheaderemphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .rowheaderempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .rowheaderfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .rowheaderstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .rowheaderstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemfooter, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemfooter10, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemfooter2, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemfooter3, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemfooter4, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemfooter5, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemfooter6, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemfooter7, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemfooter8, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemfooter9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemtitle, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemtitle10, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemtitle2, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemtitle3, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemtitle4, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemtitle5, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemtitle6, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemtitle7, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemtitle8, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systemtitle9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systitleandfootercontainer > col, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systitleandfootercontainer > colgroup > col, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systitleandfootercontainer > colgroup, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systitleandfootercontainer > tr, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systitleandfootercontainer > * > tr, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systitleandfootercontainer > thead, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systitleandfootercontainer > tbody, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systitleandfootercontainer > tfoot { border: none; }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .systitleandfootercontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .table > col, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .table > colgroup > col {
+    border-left: 1px solid #c1c1c1;
+    border-right: 0 solid #c1c1c1;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .table > tr, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .table > * > tr {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 0 solid #c1c1c1;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .table { border: hidden; }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .table {
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .titleandnotecontainer > col, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .titleandnotecontainer > colgroup > col, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .titleandnotecontainer > colgroup, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .titleandnotecontainer > tr, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .titleandnotecontainer > * > tr, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .titleandnotecontainer > thead, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .titleandnotecontainer > tbody, .ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .titleandnotecontainer > tfoot { border: none; }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .titleandnotecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .titlesandfooters {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .usertext {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f a:visited { color: #800080 }
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .warnbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .warncontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_139f9cca-a2db-4a1b-86ca-99ef3beb824f .warncontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+/*]]>*/
+</style>
+
+
+<div id="div_139f9cca-a2db-4a1b-86ca-99ef3beb824f" class="c body">
+<h1 class="body toc">Results: Program 2</h1>
+<section data-name="Contents" data-sec-type="proc">
+<div id="IDX" class="proc_title_group">
+<p class="c proctitle">The CONTENTS Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Contents Procedure</h1>
+<section>
+<h1 class="contentfolder toc">WORK.IMPORT1</h1>
+<article aria-label="Attributes">
+<h1 class="contentitem toc">Attributes</h1>
+<table class="table" style="border-spacing: 0" aria-label="Attributes">
+<caption aria-label="Attributes"></caption>
+<colgroup><col><col><col><col></colgroup>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Data Set Name</th>
+<td class="data">WORK.IMPORT1</td>
+<th class="rowheader" scope="row">Observations</th>
+<td class="data">321</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Member Type</th>
+<td class="data">DATA</td>
+<th class="rowheader" scope="row">Variables</th>
+<td class="data">13</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Engine</th>
+<td class="data">V9</td>
+<th class="rowheader" scope="row">Indexes</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Created</th>
+<td class="data">30.01.2022 19:06:45</td>
+<th class="rowheader" scope="row">Observation Length</th>
+<td class="data">136</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Last Modified</th>
+<td class="data">30.01.2022 19:06:45</td>
+<th class="rowheader" scope="row">Deleted Observations</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protection</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">Compressed</th>
+<td class="data">NO</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Data Set Type</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">Sorted</th>
+<td class="data">NO</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Label</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Data Representation</th>
+<td class="data">SOLARIS_X86_64, LINUX_X86_64, ALPHA_TRU64, LINUX_IA64</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Encoding</th>
+<td class="data">utf-8  Unicode (UTF-8)</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX1" aria-label="Engine/Host Information">
+<h1 class="contentitem toc">Engine/Host Information</h1>
+<table class="table" style="border-spacing: 0" aria-label="Engine/Host Information">
+<caption aria-label="Engine/Host Information"></caption>
+<colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Engine/Host Dependent Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Data Set Page Size</th>
+<td class="data">131072</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Data Set Pages</th>
+<td class="data">1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">First Data Page</th>
+<td class="data">1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Max Obs per Page</th>
+<td class="data">962</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Obs in First Data Page</th>
+<td class="data">321</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Data Set Repairs</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Filename</th>
+<td class="data">/saswork/SAS_work0961000037F2_odaws02-euw1.oda.sas.com/SAS_workAA9D000037F2_odaws02-euw1.oda.sas.com/import1.sas7bdat</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Release Created</th>
+<td class="data">9.0401M6</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Host Created</th>
+<td class="data">Linux</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Inode Number</th>
+<td class="data">1610612802</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Access Permission</th>
+<td class="data">rw-r--r--</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Owner Name</th>
+<td class="data">u59814750</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">File Size</th>
+<td class="data">256KB</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">File Size (bytes)</th>
+<td class="data">262144</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX2" aria-label="Variables">
+<h1 class="contentitem toc">Variables</h1>
+<table class="table" style="border-spacing: 0" aria-label="Variables">
+<caption aria-label="Variables"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="6" scope="colgroup">Alphabetic List of Variables and Attributes</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">#</th>
+<th class="b header" scope="col">Variable</th>
+<th class="b header" scope="col">Type</th>
+<th class="r b header" scope="col">Len</th>
+<th class="b header" scope="col">Format</th>
+<th class="b header" scope="col">Informat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="data">Age</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9</th>
+<td class="data">ER_status</td>
+<td class="data">Char</td>
+<td class="r data">8</td>
+<td class="data">$8.</td>
+<td class="data">$8.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="data">Gender</td>
+<td class="data">Char</td>
+<td class="r data">6</td>
+<td class="data">$6.</td>
+<td class="data">$6.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">11</th>
+<td class="data">HER1_status</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8</th>
+<td class="data">Histology</td>
+<td class="data">Char</td>
+<td class="r data">30</td>
+<td class="data">$30.</td>
+<td class="data">$30.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">10</th>
+<td class="data">PR_status</td>
+<td class="data">Char</td>
+<td class="r data">8</td>
+<td class="data">$8.</td>
+<td class="data">$8.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">13</th>
+<td class="data">Patient_Status</td>
+<td class="data">Char</td>
+<td class="r data">5</td>
+<td class="data">$5.</td>
+<td class="data">$5.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="data">Protein1</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="data">Protein2</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="data">Protein3</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="data">Protein4</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">12</th>
+<td class="data">Surgery_type</td>
+<td class="data">Char</td>
+<td class="r data">27</td>
+<td class="data">$27.</td>
+<td class="data">$27.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="data">Tumour_Stage</td>
+<td class="data">Char</td>
+<td class="r data">3</td>
+<td class="data">$3.</td>
+<td class="data">$3.</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Factor" data-sec-type="proc">
+<hr class="pagebreak">
+<div id="IDX3" class="proc_title_group">
+<p class="c proctitle">The FACTOR Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Factor Procedure</h1>
+<article aria-label="N of Observations">
+<h1 class="contentitem toc">N of Observations</h1>
+<table class="table" style="border-spacing: 0" aria-label="Number of Observations">
+<caption aria-label="Number of Observations"></caption>
+<colgroup><col><col></colgroup>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Input Data Type</th>
+<td class="r data">Raw Data</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Records Read</th>
+<td class="r data">321</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Records Used</th>
+<td class="r data">321</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">NOBS= Set in PROC Statement</th>
+<td class="r data">321</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">N for Significance Tests</th>
+<td class="r data">321</td>
+</tr>
+</tbody>
+</table>
+</article>
+<hr class="pagebreak">
+<div id="IDX4" class="proc_title_group">
+<p class="c proctitle">The FACTOR Procedure</p>
+<p class="c proctitle">Initial Factor Method: Principal Components</p>
+</div>
+<section>
+<h1 class="contentfolder toc">Initial Factor Solution</h1>
+<article aria-label="Partial Correlations">
+<h1 class="contentitem toc">Partial Correlations</h1>
+<table class="table" style="border-spacing: 0" aria-label="Partial Correlations">
+<caption aria-label="Partial Correlations"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Partial Correlations Controlling all other Variables</th>
+</tr>
+<tr>
+<th class="c headerempty" scope="col">&nbsp;</th>
+<th class="r b header" scope="col">Protein1</th>
+<th class="r b header" scope="col">Protein2</th>
+<th class="r b header" scope="col">Protein3</th>
+<th class="r b header" scope="col">Protein4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data">1.00000</td>
+<td class="r data">0.17983</td>
+<td class="r data" style="white-space: nowrap">-0.05350</td>
+<td class="r data">0.24802</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data">0.17983</td>
+<td class="r data">1.00000</td>
+<td class="r data" style="white-space: nowrap">-0.40020</td>
+<td class="r data">0.07618</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data" style="white-space: nowrap">-0.05350</td>
+<td class="r data" style="white-space: nowrap">-0.40020</td>
+<td class="r data">1.00000</td>
+<td class="r data">0.13187</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data">0.24802</td>
+<td class="r data">0.07618</td>
+<td class="r data">0.13187</td>
+<td class="r data">1.00000</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX5" aria-label="Sampling Adequacy">
+<h1 class="contentitem toc">Sampling Adequacy</h1>
+<table class="table" style="border-spacing: 0" aria-label="Measure of Sampling Adequacy">
+<caption aria-label="Measure of Sampling Adequacy"></caption>
+<colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Kaiser's Measure of Sampling Adequacy: Overall MSA = 0.52715300</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Protein1</th>
+<th class="r b header" scope="col">Protein2</th>
+<th class="r b header" scope="col">Protein3</th>
+<th class="r b header" scope="col">Protein4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">0.57852110</td>
+<td class="r data">0.53473971</td>
+<td class="r data">0.50701410</td>
+<td class="r data">0.48020434</td>
+</tr>
+</tbody>
+</table>
+</article>
+<hr class="pagebreak">
+<div id="IDX6" class="proc_title_group">
+<p class="c proctitle">The FACTOR Procedure</p>
+<p class="c proctitle">Initial Factor Method: Principal Components</p>
+</div>
+<div class="proc_note_group">
+<p class="c proctitle">Prior Communality Estimates: ONE</p>
+</div>
+<article aria-label="Eigenvalues">
+<h1 class="contentitem toc">Eigenvalues</h1>
+<table class="table" style="border-spacing: 0" aria-label="Eigenvalues">
+<caption aria-label="Eigenvalues"></caption>
+<colgroup><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Eigenvalues of the Correlation Matrix: Total = 4  Average = 1</th>
+</tr>
+<tr>
+<th class="c headerempty" scope="col">&nbsp;</th>
+<th class="r b header" scope="col">Eigenvalue</th>
+<th class="r b header" scope="col">Difference</th>
+<th class="r b header" scope="col">Proportion</th>
+<th class="r b header" scope="col">Cumulative</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">1.55529537</td>
+<td class="r data">0.37197628</td>
+<td class="r data">0.3888</td>
+<td class="r data">0.3888</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="r data">1.18331909</td>
+<td class="r data">0.48285899</td>
+<td class="r data">0.2958</td>
+<td class="r data">0.6847</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="r data">0.70046010</td>
+<td class="r data">0.13953466</td>
+<td class="r data">0.1751</td>
+<td class="r data">0.8598</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="r data">0.56092544</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">0.1402</td>
+<td class="r data">1.0000</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="proc_note_group">
+<p class="c proctitle">2 factors will be retained by the NFACTOR criterion.</p>
+</div>
+<article id="IDX7" aria-label="Scree Plot">
+<h1 class="contentitem toc">Scree Plot</h1>
+<pre class="batch" style="border-spacing: 1px">Scree Plot of Eigenvalues                                                                                                           
+      |                                                                                                                             
+  1.6 +                                                                                                                             
+      |                                     1                                                                                       
+      |                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+  1.4 +                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+  1.2 +                                                                                                                             
+      |                                                              2                                                              
+      |                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+  1.0 +                                                                                                                             
+E     |                                                                                                                             
+i     |                                                                                                                             
+g     |                                                                                                                             
+e     |                                                                                                                             
+n     |                                                                                                                             
+v 0.8 +                                                                                                                             
+a     |                                                                                                                             
+l     |                                                                                                                             
+u     |                                                                                       3                                     
+e     |                                                                                                                             
+s     |                                                                                                                             
+  0.6 +                                                                                                                             
+      |                                                                                                                4            
+      |                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+  0.4 +                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+  0.2 +                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+      |                                                                                                                             
+  0.0 +                                                                                                                             
+      |                                                                                                                             
+      -------------+------------------------+------------------------+------------------------+------------------------+------------
+                   0                        1                        2                        3                        4            
+                                                                                                                                    
+                                                                  Number                                                            
+</pre>
+</article>
+<article id="IDX8" aria-label="Factor Pattern">
+<h1 class="contentitem toc">Factor Pattern</h1>
+<table class="table" style="border-spacing: 0" aria-label="Factor Pattern">
+<caption aria-label="Factor Pattern"></caption>
+<colgroup><col></colgroup><colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="3" scope="colgroup">Factor&nbsp;Pattern</th>
+</tr>
+<tr>
+<th class="c headerempty" scope="col">&nbsp;</th>
+<th class="r b header" scope="col">Factor1</th>
+<th class="r b header" scope="col">Factor2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data">0.61483</td>
+<td class="r data">0.47653</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data">0.79635</td>
+<td class="r data" style="white-space: nowrap">-0.22486</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data" style="white-space: nowrap">-0.66864</td>
+<td class="r data">0.53512</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data">0.30989</td>
+<td class="r data">0.78697</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX9" aria-label="Variance Explained">
+<h1 class="contentitem toc">Variance Explained</h1>
+<table class="table" style="border-spacing: 0" aria-label="Variance Explained">
+<caption aria-label="Variance Explained"></caption>
+<colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Variance Explained by Each Factor</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Factor1</th>
+<th class="r b header" scope="col">Factor2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">1.5552954</td>
+<td class="r data">1.1833191</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX10" aria-label="Final Communalities">
+<h1 class="contentitem toc">Final Communalities</h1>
+<table class="table" style="border-spacing: 0" aria-label="Final Communality Estimates">
+<caption aria-label="Final Communality Estimates"></caption>
+<colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Final Communality Estimates: Total = 2.738614</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Protein1</th>
+<th class="r b header" scope="col">Protein2</th>
+<th class="r b header" scope="col">Protein3</th>
+<th class="r b header" scope="col">Protein4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">0.60510073</td>
+<td class="r data">0.68472838</td>
+<td class="r data">0.73342354</td>
+<td class="r data">0.71536181</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX11" aria-label="Residual Correlations">
+<h1 class="contentitem toc">Residual Correlations</h1>
+<table class="table" style="border-spacing: 0" aria-label="Residual Correlations - Unique Diagonal">
+<caption aria-label="Residual Correlations - Unique Diagonal"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Residual Correlations With Uniqueness on the Diagonal</th>
+</tr>
+<tr>
+<th class="c headerempty" scope="col">&nbsp;</th>
+<th class="r b header" scope="col">Protein1</th>
+<th class="r b header" scope="col">Protein2</th>
+<th class="r b header" scope="col">Protein3</th>
+<th class="r b header" scope="col">Protein4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data">0.39490</td>
+<td class="r data" style="white-space: nowrap">-0.14920</td>
+<td class="r data">0.04170</td>
+<td class="r data" style="white-space: nowrap">-0.31011</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data" style="white-space: nowrap">-0.14920</td>
+<td class="r data">0.31527</td>
+<td class="r data">0.24478</td>
+<td class="r data">0.01399</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data">0.04170</td>
+<td class="r data">0.24478</td>
+<td class="r data">0.26658</td>
+<td class="r data" style="white-space: nowrap">-0.13658</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data" style="white-space: nowrap">-0.31011</td>
+<td class="r data">0.01399</td>
+<td class="r data" style="white-space: nowrap">-0.13658</td>
+<td class="r data">0.28464</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX12" aria-label="RMS Off-diagonal Residuals">
+<h1 class="contentitem toc">RMS Off-diagonal Residuals</h1>
+<table class="table" style="border-spacing: 0" aria-label="Root Mean Square Off-Diagonal Residuals">
+<caption aria-label="Root Mean Square Off-Diagonal Residuals"></caption>
+<colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Root Mean Square Off-Diagonal Residuals: Overall = 0.18208473</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Protein1</th>
+<th class="r b header" scope="col">Protein2</th>
+<th class="r b header" scope="col">Protein3</th>
+<th class="r b header" scope="col">Protein4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">0.20013765</td>
+<td class="r data">0.16570200</td>
+<td class="r data">0.16361268</td>
+<td class="r data">0.19580104</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX13" aria-label="Partial Correlations">
+<h1 class="contentitem toc">Partial Correlations</h1>
+<table class="table" style="border-spacing: 0" aria-label="Partial Correlations">
+<caption aria-label="Partial Correlations"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Partial Correlations Controlling Factors</th>
+</tr>
+<tr>
+<th class="c headerempty" scope="col">&nbsp;</th>
+<th class="r b header" scope="col">Protein1</th>
+<th class="r b header" scope="col">Protein2</th>
+<th class="r b header" scope="col">Protein3</th>
+<th class="r b header" scope="col">Protein4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data">1.00000</td>
+<td class="r data" style="white-space: nowrap">-0.42285</td>
+<td class="r data">0.12853</td>
+<td class="r data" style="white-space: nowrap">-0.92495</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data" style="white-space: nowrap">-0.42285</td>
+<td class="r data">1.00000</td>
+<td class="r data">0.84434</td>
+<td class="r data">0.04669</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data">0.12853</td>
+<td class="r data">0.84434</td>
+<td class="r data">1.00000</td>
+<td class="r data" style="white-space: nowrap">-0.49581</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data" style="white-space: nowrap">-0.92495</td>
+<td class="r data">0.04669</td>
+<td class="r data" style="white-space: nowrap">-0.49581</td>
+<td class="r data">1.00000</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX14" aria-label="RMS Off-diagonal Partials">
+<h1 class="contentitem toc">RMS Off-diagonal Partials</h1>
+<table class="table" style="border-spacing: 0" aria-label="Root Mean Square Off-Diagonal Partials">
+<caption aria-label="Root Mean Square Off-Diagonal Partials"></caption>
+<colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Root Mean Square Off-Diagonal Partials: Overall = 0.57904678</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Protein1</th>
+<th class="r b header" scope="col">Protein2</th>
+<th class="r b header" scope="col">Protein3</th>
+<th class="r b header" scope="col">Protein4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">0.59184990</td>
+<td class="r data">0.54585802</td>
+<td class="r data">0.57016156</td>
+<td class="r data">0.60650575</td>
+</tr>
+</tbody>
+</table>
+</article>
+<hr class="pagebreak">
+<div id="IDX15" class="proc_title_group">
+<p class="c proctitle">The FACTOR Procedure</p>
+<p class="c proctitle">Initial Factor Method: Principal Components</p>
+</div>
+<section>
+<h1 class="contentfolder toc">Factor Pattern Plots</h1>
+<article aria-label="1 and 2">
+<h1 class="contentitem toc">1 and 2</h1>
+<pre class="batch" style="border-spacing: 1px">Plot of Factor Pattern for Factor1 and Factor2                                                                                      
+                                                                                                                                    
+                                                               Factor1                                                              
+                                                                  1                                                                 
+                                                                                                                                    
+                                                                 .9                                                                 
+                                                                                                                                    
+                                                           B     .8                                                                 
+                                                                                                                                    
+                                                                 .7                                                                 
+                                                                                                                                    
+                                                                 .6             A                                                   
+                                                                                                                                    
+                                                                 .5                                                                 
+                                                                                                                                    
+                                                                 .4                                                                 
+                                                                                                                                    
+                                                                 .3                      D                                          
+                                                                                                                                    
+                                                                 .2                                                                 
+                                                                                                  F                                 
+                                                                 .1                               a                                 
+                                                                                                  c                                 
+                                  -1 -.9-.8-.7-.6-.5-.4-.3-.2-.1  0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0t                                 
+                                                                                                  o                                 
+                                                                -.1                               r                                 
+                                                                                                  2                                 
+                                                                -.2                                                                 
+                                                                                                                                    
+                                                                -.3                                                                 
+                                                                                                                                    
+                                                                -.4                                                                 
+                                                                                                                                    
+                                                                -.5                                                                 
+                                                                                                                                    
+                                                                -.6                                                                 
+                                                                                  C                                                 
+                                                                -.7                                                                 
+                                                                                                                                    
+                                                                -.8                                                                 
+                                                                                                                                    
+                                                                -.9                                                                 
+                                                                                                                                    
+                                                                 -1                                                                 
+                                                                                                                                    
+                                        Protein1=A    Protein2=B    Protein3=C    Protein4=D                                        
+</pre>
+</article>
+</section>
+</section>
+<hr class="pagebreak">
+<div id="IDX16" class="proc_title_group">
+<p class="c proctitle">The FACTOR Procedure</p>
+<p class="c proctitle">Rotation Method: Varimax</p>
+</div>
+<section>
+<h1 class="contentfolder toc">Rotated Factor Solution</h1>
+<article aria-label="Orthogonal Transformation">
+<h1 class="contentitem toc">Orthogonal Transformation</h1>
+<table class="table" style="border-spacing: 0" aria-label="Orthogonal Transformation Matrix">
+<caption aria-label="Orthogonal Transformation Matrix"></caption>
+<colgroup><col></colgroup><colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="3" scope="colgroup">Orthogonal Transformation Matrix</th>
+</tr>
+<tr>
+<th class="c headerempty" scope="col">&nbsp;</th>
+<th class="r b header" scope="col">1</th>
+<th class="r b header" scope="col">2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">1</th>
+<td class="r data" style="white-space: nowrap">-0.85388</td>
+<td class="r data">0.52047</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">2</th>
+<td class="r data">0.52047</td>
+<td class="r data">0.85388</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX17" aria-label="Factor Pattern">
+<h1 class="contentitem toc">Factor Pattern</h1>
+<table class="table" style="border-spacing: 0" aria-label="Rotated Factor Pattern">
+<caption aria-label="Rotated Factor Pattern"></caption>
+<colgroup><col></colgroup><colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="3" scope="colgroup">Rotated&nbsp;Factor&nbsp;Pattern</th>
+</tr>
+<tr>
+<th class="c headerempty" scope="col">&nbsp;</th>
+<th class="r b header" scope="col">Factor1</th>
+<th class="r b header" scope="col">Factor2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data" style="white-space: nowrap">-0.27698</td>
+<td class="r data">0.72690</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data" style="white-space: nowrap">-0.79702</td>
+<td class="r data">0.22247</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data">0.84945</td>
+<td class="r data">0.10892</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data">0.14498</td>
+<td class="r data">0.83327</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX18" aria-label="Variance Explained">
+<h1 class="contentitem toc">Variance Explained</h1>
+<table class="table" style="border-spacing: 0" aria-label="Variance Explained">
+<caption aria-label="Variance Explained"></caption>
+<colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Variance Explained by Each Factor</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Factor1</th>
+<th class="r b header" scope="col">Factor2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">1.4545316</td>
+<td class="r data">1.2840828</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX19" aria-label="Final Communalities">
+<h1 class="contentitem toc">Final Communalities</h1>
+<table class="table" style="border-spacing: 0" aria-label="Final Communality Estimates">
+<caption aria-label="Final Communality Estimates"></caption>
+<colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Final Communality Estimates: Total = 2.738614</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Protein1</th>
+<th class="r b header" scope="col">Protein2</th>
+<th class="r b header" scope="col">Protein3</th>
+<th class="r b header" scope="col">Protein4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">0.60510073</td>
+<td class="r data">0.68472838</td>
+<td class="r data">0.73342354</td>
+<td class="r data">0.71536181</td>
+</tr>
+</tbody>
+</table>
+</article>
+<hr class="pagebreak">
+<div id="IDX20" class="proc_title_group">
+<p class="c proctitle">The FACTOR Procedure</p>
+<p class="c proctitle">Rotation Method: Varimax</p>
+</div>
+<div class="proc_note_group">
+<p class="c proctitle">Scoring Coefficients Estimated by Regression</p>
+</div>
+<article aria-label="Correlations with Factors">
+<h1 class="contentitem toc">Correlations with Factors</h1>
+<table class="table" style="border-spacing: 0" aria-label="Squared Multiple Correlations of Variables with Factors">
+<caption aria-label="Squared Multiple Correlations of Variables with Factors"></caption>
+<colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Squared Multiple Correlations of the Variables with Each Factor</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Factor1</th>
+<th class="r b header" scope="col">Factor2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">1.0000000</td>
+<td class="r data">1.0000000</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX21" aria-label="Standardized Scoring Coefficients">
+<h1 class="contentitem toc">Standardized Scoring Coefficients</h1>
+<table class="table" style="border-spacing: 0" aria-label="Standardized Scoring Coefficients">
+<caption aria-label="Standardized Scoring Coefficients"></caption>
+<colgroup><col></colgroup><colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="3" scope="colgroup">Standardized Scoring Coefficients</th>
+</tr>
+<tr>
+<th class="c headerempty" scope="col">&nbsp;</th>
+<th class="r b header" scope="col">Factor1</th>
+<th class="r b header" scope="col">Factor2</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data" style="white-space: nowrap">-0.12796</td>
+<td class="r data">0.54961</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data" style="white-space: nowrap">-0.53611</td>
+<td class="r data">0.10423</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data">0.60246</td>
+<td class="r data">0.16238</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data">0.17601</td>
+<td class="r data">0.67158</td>
+</tr>
+</tbody>
+</table>
+</article>
+<hr class="pagebreak">
+<div id="IDX22" class="proc_title_group">
+<p class="c proctitle">The FACTOR Procedure</p>
+<p class="c proctitle">Rotation Method: Varimax</p>
+</div>
+<section>
+<h1 class="contentfolder toc">Factor Pattern Plots</h1>
+<article aria-label="1 and 2">
+<h1 class="contentitem toc">1 and 2</h1>
+<pre class="batch" style="border-spacing: 1px">Plot of Factor Pattern for Factor1 and Factor2                                                                                      
+                                                                                                                                    
+                                                               Factor1                                                              
+                                                                  1                                                                 
+                                                                                                                                    
+                                                                 .9                                                                 
+                                                                     C                                                              
+                                                                 .8                                                                 
+                                                                                                                                    
+                                                                 .7                                                                 
+                                                                                                                                    
+                                                                 .6                                                                 
+                                                                                                                                    
+                                                                 .5                                                                 
+                                                                                                                                    
+                                                                 .4                                                                 
+                                                                                                                                    
+                                                                 .3                                                                 
+                                                                                                                                    
+                                                                 .2                                                                 
+                                                                                          D       F                                 
+                                                                 .1                               a                                 
+                                                                                                  c                                 
+                                  -1 -.9-.8-.7-.6-.5-.4-.3-.2-.1  0 .1 .2 .3 .4 .5 .6 .7 .8 .9 1.0t                                 
+                                                                                                  o                                 
+                                                                -.1                               r                                 
+                                                                                                  2                                 
+                                                                -.2                                                                 
+                                                                                                                                    
+                                                                -.3                    A                                            
+                                                                                                                                    
+                                                                -.4                                                                 
+                                                                                                                                    
+                                                                -.5                                                                 
+                                                                                                                                    
+                                                                -.6                                                                 
+                                                                                                                                    
+                                                                -.7                                                                 
+                                                                                                                                    
+                                                                -.8     B                                                           
+                                                                                                                                    
+                                                                -.9                                                                 
+                                                                                                                                    
+                                                                 -1                                                                 
+                                                                                                                                    
+                                        Protein1=A    Protein2=B    Protein3=C    Protein4=D                                        
+</pre>
+</article>
+</section>
+</section>
+</section>
+</div>
+
+
+</div>
+<p>
+</div>
+</body></html>

@@ -1,0 +1,153 @@
+---
+title: "ÇDA Faktör Analizi ecem"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(haven)
+breast_canser_data <- read_sav("breast_canser_data.sav")
+View(breast_canser_data)
+```
+
+```{r}
+library(GGally)
+breast_canser<-breast_canser_data[,3:6]   ## ya da food[,-1] de diyebilirdik.
+ggpairs(breast_canser_data)#sacilim matrisi
+View(breast_canser)
+```
+
+```{r}
+#KORELASYON MATRİSİNİN İNCELENMESİ
+library(corrplot)
+library(matlib)
+corrplot(cor(breast_canser))
+korelasyon<-cor(breast_canser)
+korelasyon
+```
+```{r}
+library("Hmisc") #anlamlılık değerleriyle birlikte görmek istersek (2-tailed sonuçlar)
+rcorr(as.matrix(breast_canser),type="pearson") # Veri matris formatında olmalı
+```
+
+```{r}
+invkor<-inv(korelasyon)# korelasyon matrisinin tersi (VIF)
+```
+
+```{r}
+invkor<-inv(korelasyon)# korelasyon matrisinin tersi (VIF)
+colnames(invkor)<-rownames(invkor)<-colnames(korelasyon) # değişken isimleri yazması için
+invkor
+```
+
+```{r}
+#Faktor Analizi Uygulanabilirligi (KMO - Anti-Image - Bartlett Test)
+library(psych)
+KMO(breast_canser) # KMO ve MSA Anti-image matris kosegenleri
+```
+
+```{r}
+#Bartlett Küresellik Testi(Bartlett's Test of Spherecity) 
+#install.packages("psych")
+cortest.bartlett(cor(breast_canser),nrow(breast_canser)) #Bartlett test 
+```
+
+```{r}
+#Temel Bilesenler Analizi Yöntemi(Kok lambda yaklasimi) secilerek faktor analizi
+fa_kokl<-principal(breast_canser, nfactors =3, rotate = "none")
+###fit.pca2 <- prcomp( ~., domes_factor, scale=TRUE) # koymasak olur 125.satır scree plot için gerekli sadece
+print(fa_kokl$loadings, digits=3, cutoff=.0, sort=TRUE) ## sıralı hale getirmek için
+```
+```{r}
+fa_kokl$communality  #tum degiskenlerin communality(h^2) hesaplaması
+
+fa_kokl$loadings[ , ]^2# aj^2 'ler tüm faktörler için (communality herbir değişken için yüklerin kareler toplamıdır)
+rowSums(fa_kokl$loadings[ , ]^2) #communality hesaplanışı görülmesi için
+```
+
+```{r}
+### ncol(domes_factor) Değişken sayısını direk yazmak yerine kullanılabilir 
+
+var_oran<-colSums(fa_kokl$loadings[ , ]^2)/9 #varyans aciklama oranlari (değişken sayısına dikkat et!!!)
+var_oran
+sum(var_oran) # 3 Faktörün toplam varyans açıklama oranı
+```
+
+```{r}
+#scree
+plot(fa_kokl$values, type="b", main="ScreePlot", xlab="Number of Factors", ylab="Eigenvalues")
+```
+```{r}
+artik_kor<-fa_kokl$residual ## Artık korelasyon matrisi
+artik_kor
+```
+
+```{r}
+#n_col_artik<-ncol(artik_kor)
+#n_artik<-length(artik_kor)
+#n_2artik<-n_artik-n_col_artik
+length(artik_kor[abs(artik_kor)<0.05])/72 ## 0,05'den küçük çıkanların oranı (72 sizin verinizde değişkenlik gösterecek !!!!! ipucu yukarıda)
+```
+
+```{r}
+#Varimax döndürme ile
+fa_kokl<-principal(breast_canser, nfactors =3, rotate = "varimax")
+print(fa_kokl$loadings, digits=3, cutoff=.3, sort=TRUE)
+```
+
+```{r}
+#caused cıkarılıyor
+fa_kokl<-principal(breast_canser[,-4], nfactors =3, rotate = "varimax")
+print(fa_kokl$loadings, digits=3, cutoff=.3, sort=TRUE)
+```
+
+```{r}
+fa.diagram(fa_kokl)
+```
+```{r}
+?principal
+```
+
+```{r}
+#Faktor yuku grafigi
+fyuk=fa_kokl$loadings[,1:3]#degiskenlerin faktor yukleri
+library(scatterplot3d)
+s3d=scatterplot3d(as.data.frame(unclass(fyuk)), main="3D factor loadings", color=1:ncol(breast_canser[,-4]), pch=20,lwd=5, cex.axis =1,cex.lab = 1.5, font.lab = 2)
+text(s3d$xyz.convert(fyuk), labels = rownames(fyuk),
+     cex= 1, col = 1:ncol(breast_canser[,-4]))
+```
+
+```{r}
+#ya da 
+factor.plot(fa_kokl, labels=rownames(fa_kokl$loadings))
+```
+```{r}
+#Eger 2 faktor secilseydi plot:
+fyuk2=fa_kokl$loadings[,1:2]
+factor.plot(fyuk2, cut=0.5, labels=rownames(fa_kokl$loadings),font=2, cex=0.8)
+```
+```{r}
+?factor.plot
+```
+
+```{r}
+#Principal Axis Yontemiyle Faktor Analizi( MLE, Minimum Residual vs de secilebilir )
+library(psych)
+?fa
+fsolution <- fa(breast_canser, nfactors = 3, rotate = "none")
+print(fsolution$loadings, digits=3, cutoff=.3, sort=TRUE)
+```
+
+```{r}
+frotate <- fa(breast_canser, nfactors = 3, rotate = "varimax",scores=TRUE) #oblimin ya da promax
+print(frotate$loadings, digits=3, cutoff=.3, sort=TRUE)
+```
+```{r}
+fa.diagram(frotate)
+
+factor.plot(frotate, labels=rownames(frotate$loadings))
+```
+

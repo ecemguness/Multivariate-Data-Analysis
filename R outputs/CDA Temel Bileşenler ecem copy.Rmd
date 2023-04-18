@@ -1,0 +1,131 @@
+---
+title: "CDA Temel Bileşenler ecem"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(haven)
+breast_canser_data <- read_sav("breast_canser_data.sav")
+View(breast_canser_data)
+```
+
+```{r}
+library(GGally)
+breast_canser<-breast_canser_data[,3:6] 
+ggpairs(breast_canser_data)#sacilim matrisi
+```
+
+
+```{r}
+library(corrplot)
+corrplot(cor(breast_canser)) #Bir başka grafiksel gösterim
+```
+
+
+```{r}
+#PCA UYGULANABİLİRLİGİ (KMO - ANTİ-IMAGE - BARTLETT TEST)
+library(psych)
+KMO(breast_canser) # KMO ve MSA Anti-image matris kosegenleri
+```
+
+```{r}
+breast_canser = subset(breast_canser_data, select = c(3,4,5))#protein4 değişkenimizi çıkarıyoruz.
+View(breast_canser)
+```
+
+
+```{r}
+#Bartlett Küresellik Testi(Bartlett's Test of Spherecity) 
+cortest.bartlett(cor(breast_canser),nrow(breast_canser)) #Bartlett test 
+```
+
+```{r}
+#TEMEL BİLESENLER ANALİZİ- princomp fonksiyonu
+bcd.pca <- prcomp(breast_canser, scale=TRUE) # korelasyon matrisi icin scale=TRUE yaz 
+bcd.pca$rotation ## yükler
+bcd.pca$x   #scores
+```
+
+
+```{r}
+#Bilesen sayisina karar vermek
+summary(bcd.pca) # varyans açıklama oranları 
+(bcd.pca$sdev)^2 #ozdegerler 1 den büyük olanları seç
+```
+
+```{r}
+(bcd.pca$sdev)^2
+```
+
+
+```{r}
+#Scree plot
+plot(bcd.pca)
+plot(bcd.pca,type="line")
+#ya da 
+```
+
+```{r}
+library(factoextra)
+scree <- fviz_eig(bcd.pca)
+scree
+```
+
+
+```{r}
+#ilk iki bilesene karar verildi:
+bcd.pca$rotation[,1:2] #loadings
+
+```
+
+```{r}
+faktor_yukleri<-t(bcd.pca$rotation)*bcd.pca$sdev # koklambda ile carpılmıs hali bu da bizi faktore goturuyor
+faktor_yukleri #asal bileşenler
+```
+
+```{r}
+row.names(bcd.pca$x) <- breast_canser$Protein1
+row.names(bcd.pca$x) <- breast_canser$Protein2
+row.names(bcd.pca$x) <- breast_canser$Protein3#skorları isimlendirme 
+```
+
+```{r}
+#skorları veriye kaydetme
+breast_canser$comp1=bcd.pca$x[,1] 
+breast_canser$comp2=bcd.pca$x[,2] 
+breast_canser$comp2=bcd.pca$x[,3] 
+
+```
+
+```{r}
+#indeks olusturma ### 
+breast_canser$index=breast_canser$comp1+breast_canser$comp2
+indeks<-sort(breast_canser$index, decreasing = T)
+head(indeks)# Gözlem sayısı çok olduğunda kullanılablir.
+```
+
+```{r}
+library(FactoMineR)
+library(factoextra)
+fviz_pca_var(bcd.pca,col.var="steelblue",
+             repel = TRUE # Avoid text overlapping
+)
+```
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,0 +1,103 @@
+---
+title: "cda ecem"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(haven)
+breast_canser_data <- read_sav("breast_canser_data.sav")
+View(breast_canser_data)
+```
+
+```{r}
+library(GGally)
+breast_canser<-breast_canser_data[, c(3,4,5,6,11)]   
+View(breast_canser)
+```
+
+
+```{r}
+library(corrplot)
+corrplot(cor(breast_canser[,-1], method = "spearman"), method="number") 
+```
+
+```{r}
+#Normallik
+library(funModeling)
+plot_num(breast_canser)
+```
+```{r}
+#Univariate Normality
+#Her bir degisken için
+shapiro.test(breast_canser$Protein1)
+shapiro.test(breast_canser$Protein2)
+shapiro.test(breast_canser$Protein3)
+shapiro.test(breast_canser$Protein4)
+```
+
+```{r}
+#Multivariate Normality
+library(dplyr)
+library(rstatix)
+breast_canser %>% 
+  dplyr::select(!c(HER1_status)) %>%
+  mshapiro_test()
+```
+```{r}
+#Homogeneity of Covariances
+#install.packages("biotools")
+library(biotools)
+boxM(breast_canser[,1:4], breast_canser$HER1_status)
+```
+```{r}
+#Linear Discriminant Analysis - Binary-class
+library(MASS) 
+lda_breast_canser <- lda(HER1_status ~ Protein1+Protein2+Protein3+Protein4, data=breast_canser) 
+lda_breast_canser
+```
+```{r}
+#constant:
+cons<-apply(breast_canser[,-1], 2, mean)
+(-cons)%*%(lda_breast_canser$scaling)
+```
+
+```{r}
+#Grup tahmini yapilmasi
+lda_pred <- predict(lda_breast_canser)
+lda_pred$class # Sinifatamalari 
+```
+
+```{r}
+#plots
+ldahist(lda_pred$x, g = breast_canser$HER1_status) 
+```
+
+```{r}
+#Çapraz Tablonun olusturulmasi
+tablo<-table(breast_canser$HER1_status,lda_pred$class)
+tablo
+```
+
+```{r}
+#Dogru siniflanma orani
+classrate<-sum(diag(tablo))/sum(tablo)
+classrate
+```
+
+```{r}
+#Nispi sans kriteri p1^2+p^2
+lda_breast_canser$prior[1]^2 + lda_breast_canser$prior[2]^2
+```
+
+```{r}
+#Orjinal gruplar ile Tahmin edilen grupların karşılaştırılması
+comp<-cbind(breast_canser$HER1_status,lda_pred$class)
+```
+
+
+
+

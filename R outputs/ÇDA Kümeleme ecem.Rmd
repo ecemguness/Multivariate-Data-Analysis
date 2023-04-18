@@ -1,0 +1,133 @@
+---
+title: "cda ecem"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(haven)
+breast_canser_sampling <- read_sav("~/Desktop/çda_ecem/breast_canser_sampling.sav")
+View(breast_canser_sampling)
+```
+
+```{r}
+library(GGally)
+breastc_sampling<-breast_canser_sampling[, c(3,4,5,6,11)]   ## ya da food[,-1] de diyebilirdik.
+View(breastc_sampling)
+```
+
+
+```{r}
+breastc_sampling <- na.omit(breastc_sampling) # eksik gözlemlerin çikarilmasi
+summary(breastc_sampling)
+```
+
+```{r}
+# Korelasyon matrisinin incelenmesi
+library("Hmisc")
+rcorr(as.matrix(breastc_sampling[,-1]),type="pearson") 
+```
+
+```{r}
+# Hiyerarsik Kümeleme
+d <- dist(breastc_sampling[,-1], method = "euclidean") # uzaklik matrisi
+fit <- hclust(d, method="ward.D") # method= "single", "complete", "average", "ward.D", "centroid"
+dend<-as.dendrogram(fit) # Dendogram çizimi
+plot(dend)
+```
+```{r}
+library(dendextend)
+d2 <- dist(breastc_sampling, method = "euclidean")
+fit2 <- hclust(d2, method="ward.D") 
+dend2<-as.dendrogram(fit2)
+labels(dend2) <- paste(as.character(breastc_sampling)[order.dendrogram(dend2)],"(",labels(dend2),")", sep = "") #Etiketleri eklemek için
+plot(color_branches(dend2, k=3))
+par(mar = c(10,2,1,1)) # etiketler sığması için
+plot(color_branches(dend2, k=3)) # tekrardan çizdirdiğimizde
+```
+
+```{r}
+library(dendextend)
+geneldend<-dend2 %>%
+  set("branches_lwd", 2) %>%
+  set("branches_k_color", k = 3)%>%
+  set("labels_cex", 1.2)%>%
+  set("labels_colors",k=3)
+plot(geneldend,font.axis = 2) #type="triangle"
+```
+
+```{r}
+###Dendogram farkli bir paket uzerinden de cizilebilir
+library(factoextra)
+res.hc <- hclust(d2,  method = "ward.D2")
+fviz_dend(res.hc, cex = 0.5, k = 3, palette = "jco") 
+```
+```{r}
+############     K-MEANS    #############
+#Küme sayisinin Belirlenmesi için 
+fviz_nbclust(breastc_sampling[,-1], kmeans, method = "wss")
+```
+
+```{r}
+##initial <- read_sav("initial.sav")
+set.seed(95739487) 
+km.res <- kmeans(breastc_sampling[,-1],3, iter.max=10, algorithm="Lloyd")### initial[,-1] başlangıç kümelerini seçmek isterseniz
+t(km.res$centers) #Cluster means = SPSS'teki Final Cluster Centers
+```
+
+```{r}
+#Ilk iki faktörün cizdirilmesi
+library(cluster)
+clusplot(breastc_sampling[,-1], km.res$cluster, main='2D representation of the Cluster solution',
+         color=TRUE, shade=TRUE,
+         labels=2, lines=0)
+```
+```{r}
+library(haven)
+proteins<-read_sav("../breast_canser_sampling.sav")
+proteins<-proteins[,3:6]
+View(proteins)
+```
+
+```{r}
+library(factoextra)
+fviz_nbclust(proteins, kmeans, method = "wss")
+```
+
+```{r}
+library(factoextra)
+set.seed(7543) # for reproducibility
+km.proteins <- kmeans(proteins, 3,iter.max=10, algorithm="Lloyd")### başlangıç kümelerini seçmek isterseniz istediğiniz gözlemleri küme sayısı yerine yazabilirsiniz.
+t(km.proteins$centers)
+```
+
+```{r}
+library(cluster)
+clusplot(proteins, km.proteins$cluster, main='2D representation of the Cluster solution',
+         color=TRUE, shade=TRUE,
+         labels=2, lines=0)
+```
+```{r}
+library(cluster)
+proteins$cluster=km.proteins$cluster # Veriye gözlemin atandigi kumenin eklenmesi
+proteins$cluster<-as.factor(proteins$cluster)
+```
+
+```{r}
+#Anova tablosu
+library(dplyr)
+library(rstatix)
+library(cluster)
+Protein1_aov <- aov(Protein1 ~ cluster, data = proteins)
+summary(Protein1_aov)
+Protein2_aov <- aov(Protein2 ~ cluster, data = proteins)
+summary(Protein2_aov)
+Protein3_aov <- aov(Protein3 ~ cluster, data = proteins)
+summary(Protein3_aov)
+Protein4_aov <- aov(Protein4 ~ cluster, data = proteins)
+summary(Protein4_aov)
+```
+

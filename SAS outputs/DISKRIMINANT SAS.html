@@ -1,0 +1,2680 @@
+<html>
+<meta charset="UTF-8">
+<style>
+body { 
+font-family: 'Lato', sans-serif !important;
+font-size: 14px!important;
+color: #353535;
+background-color: #f0f1f2;
+background: #f0f1f2;
+}
+</style>
+<title>
+Program Summary - Program 3
+</title>
+<body>
+<center>
+<h3>
+Program Summary - Program 3</center>
+<p><hr>
+<h3>Execution Environment</h3>
+<table border=0>
+<tr><td nowrap>Author:</td><td nowrap>u59814750</td></tr><tr><td nowrap>File:</td><td nowrap></td></tr><tr><td nowrap>SAS Platform:</td><td nowrap>Linux LIN X64 3.10.0-1062.9.1.el7.x86_64</td></tr><tr><td nowrap>SAS Host:</td><td nowrap>ODAWS01-EUW1.ODA.SAS.COM</td></tr><tr><td nowrap>SAS Version:</td><td nowrap>9.04.01M6P11072018</td></tr><tr><td nowrap>SAS Locale:</td><td nowrap>tr_TR</td></tr><tr><td nowrap>Submission Time:</td><td nowrap>30.01.2022 19:10:36</td></tr><tr><td nowrap>Browser Host:</td><td nowrap>178.233.117.30</td></tr><tr><td nowrap>User Agent:</td><td>Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/97.0.4692.99 Safari/537.36</td></tr><tr><td nowrap>Application Server:</td><td nowrap>ODAMID00-EUW1.ODA.SAS.COM</td></tr>
+</table>
+</h3></center>
+<p><hr></hr>
+<link media="all" rel="stylesheet" href="https://odamid-euw1.oda.sas.com/SASStudio/proxy/308101.1.4.20210729104401_f0dms381p_pp/resources/js/dojo/dijit/themes/corporate/sce.css" /><div>
+<h3>Code: Program 3</h3>
+<div style="width: 807.344px; height: 744px;"><div tabindex="-1" role="application" class="textview sce sce-sas _textviewDOMReady" style="position: relative; overflow: hidden; width: 100%; height: 100%; text-size-adjust: 100%; line-height: normal;"><div class="textviewLeftRuler" tabindex="-1" aria-hidden="true" style="overflow: hidden; user-select: none; position: absolute; top: 0px; bottom: 0px; cursor: default; display: none;"></div><div class="textviewScroll" tabindex="-1" style="position: absolute; inset: 0px; border-width: 0px; margin: 0px; outline: none; background: transparent; overflow: hidden;"><div style="margin: 0px; border-width: 0px; padding: 0px; height: 720px; width: 803px;"></div></div><div class="textviewRightRuler" tabindex="-1" aria-hidden="true" style="overflow: hidden; user-select: none; position: absolute; top: 0px; bottom: 0px; cursor: default; display: none; right: 0px;"></div><div class="textviewInnerRightRuler" tabindex="-1" aria-hidden="true" style="overflow: hidden; user-select: none; position: absolute; top: 0px; bottom: 0px; cursor: default; display: none; z-index: 1; right: 0px;"></div><div class="textviewMarginRuler" tabindex="-1" aria-hidden="true" style="overflow: hidden; user-select: none; position: absolute; top: 0px; bottom: 0px; cursor: default; display: none; z-index: 4; left: 2px;"></div><div style="position: absolute; overflow: hidden; margin: 0px; border-width: 0px; padding: 0px; background: transparent; inset: 0px 0px 4px;"><div style="position: absolute; height: 1px; top: -1000px; background: transparent; width: 803px;"></div><div class="textviewContent" tabindex="0" spellcheck="false" contenteditable="true" style="position: absolute; border-width: 0px; margin: 0px; padding: 0px; outline: none; z-index: 1; user-select: text; white-space: pre; overflow-wrap: normal; tab-size: 4; left: 2px; top: 4px; width: 803px; height: 736px;"><div><span class="comment">/* Generated Code (IMPORT) */</span><span> </span></div><div><span class="comment">/* Source File: breast_canser_data.csv */</span><span> </span></div><div><span class="comment">/* Source Path: /home/u59814750/ecem_breast_canser_data */</span><span> </span></div><div><span class="comment">/* Code generated on: 30.01.2022 18:50 */</span><span> </span></div><div><span> </span></div><div><span class="macro-ref">%web_drop_table</span><span class="sep">(</span><span class="text">WORK.IMPORT1</span><span class="sep">);</span><span> </span></div><div><span> </span></div><div><span> </span></div><div><span class="keyword">FILENAME</span><span class="text"> REFFILE </span><span class="string">'/home/u59814750/ecem_breast_canser_data/breast_canser_data.csv'</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">PROC</span><span class="text"> </span><span class="sec-keyword">IMPORT</span><span class="text"> </span><span class="keyword">DATAFILE</span><span class="sep">=</span><span class="text">REFFILE</span><span> </span></div><div><span class="text">	</span><span class="keyword">DBMS</span><span class="sep">=</span><span class="text">CSV</span><span> </span></div><div><span class="text">	</span><span class="keyword">OUT</span><span class="sep">=</span><span class="text">WORK.IMPORT1</span><span class="sep">;</span><span> </span></div><div><span class="text">	</span><span class="keyword">GETNAMES</span><span class="sep">=</span><span class="text">YES</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">RUN</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">PROC</span><span class="text"> </span><span class="sec-keyword">CONTENTS</span><span class="text"> </span><span class="keyword">DATA</span><span class="sep">=</span><span class="text">WORK.IMPORT1</span><span class="sep">;</span><span class="text"> </span><span class="sec-keyword">RUN</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div><span> </span></div><div><span class="macro-ref">%web_open_table</span><span class="sep">(</span><span class="text">WORK.IMPORT1</span><span class="sep">);</span><span> </span></div><div><span class="comment">/* yorum satiri eklenebilir */</span><span class="text"> </span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">proc</span><span class="text"> </span><span class="sec-keyword">freq</span><span class="text"> </span><span class="keyword">data</span><span class="sep">=</span><span class="text">IMPORT1</span><span class="sep">;</span><span> </span></div><div><span class="text">  </span><span class="keyword">tables</span><span class="text"> HER1_status</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">proc</span><span class="text"> </span><span class="sec-keyword">corr</span><span class="text"> </span><span class="keyword">data</span><span class="sep">=</span><span class="text">IMPORT1 </span><span class="keyword">spearman</span><span class="sep">;</span><span class="text"> </span><span> </span></div><div><span class="keyword">var</span><span class="text"> Protein1 Protein2 Protein3 Protein4</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">proc</span><span class="text"> </span><span class="sec-keyword">discrim</span><span class="text"> </span><span class="keyword">data</span><span class="sep">=</span><span class="text">IMPORT1 </span><span class="keyword">can</span><span class="text"> </span><span class="keyword">simple</span><span class="sep">;</span><span> </span></div><div><span class="keyword">class</span><span class="text"> HER1_status</span><span class="sep">;</span><span> </span></div><div><span class="keyword">var</span><span class="text"> Protein1 Protein2 Protein3 Protein4</span><span class="sep">;</span><span> </span></div><div><span class="keyword">priors</span><span class="text"> </span><span class="keyword">proportional</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div><div><span> </span></div><div class=" block-mark"><span class="sec-keyword">proc</span><span class="text"> </span><span class="sec-keyword">stepdisc</span><span class="text"> </span><span class="keyword">data</span><span class="sep">=</span><span class="text">IMPORT1</span><span class="sep">;</span><span> </span></div><div><span class="keyword">class</span><span class="text"> HER1_status</span><span class="sep">;</span><span> </span></div><div><span class="keyword">var</span><span class="text"> Protein1 Protein2 Protein3 Protein4</span><span class="sep">;</span><span> </span></div><div><span class="sec-keyword">run</span><span class="sep">;</span><span> </span></div></div><div class="textviewSelectionUnfocused" style="position: absolute; border-width: 0px; margin: 0px; padding: 0px; outline: none; width: 0px; height: 0px; z-index: 0; visibility: visible;"></div><div class="textviewSelectionUnfocused" style="position: absolute; border-width: 0px; margin: 0px; padding: 0px; outline: none; width: 0px; height: 0px; z-index: 0;"></div><div class="textviewSelectionUnfocused" style="position: absolute; border-width: 0px; margin: 0px; padding: 0px; outline: none; width: 0px; height: 0px; z-index: 0;"></div></div></div></div></div>
+<div>
+<hr><h3>Log: Program 3</h3>
+<style>
+.sasError{color:red}
+.sasMessage{color:#000}
+.sasWarning{color:#008000}
+.sasSource{color:#000}
+.sasNote{color:#00f}
+</style><p>Notes (17)</p>
+<div {'style':display:none;height:0px'}="" charset="UTF-8"></div><div {'style':display:none;height:0px'}="" rel="stylesheet" href="./log.css"></div><style rel="stylesheet">.sasError {color: red;}.sasMessage{color:#000000;}.sasWarning{color:green;}.sasSource{color:#000000;}.sasNote {color:blue;}</style><div {'style':display:none;height:0px'}log:program="" 3<="" div=""><pre class="sasLog" id="pre_sasLog_88277" style="background-color:transparent; -webkit-user-select: text; -webkit-user-modify: read-only;-webkit-touch-callout: default;border-top-width: 0px;border-bottom-width: 0px"><div><div class="sasSource"> </div><div class="sasSource"> 1          OPTIONS NONOTES NOSTIMER NOSOURCE NOSYNTAXCHECK;</div><div class="sasSource"> 68         </div><div class="sasSource"> 69         /* Generated Code (IMPORT) */</div><div class="sasSource"> 70         /* Source File: breast_canser_data.csv */</div><div class="sasSource"> 71         /* Source Path: /home/u59814750/ecem_breast_canser_data */</div><div class="sasSource"> 72         /* Code generated on: 30.01.2022 18:50 */</div><div class="sasSource"> 73         </div><div class="sasSource"> 74         %web_drop_table(WORK.IMPORT1);</div><div class="sasNote" id="sasLogNote1_1643559035626"> NOTE: Table WORK.IMPORT1 has been dropped.</div><div class="sasNote" id="sasLogNote2_1643559035626"> NOTE: PROCEDURE SQL used (Total process time):</div><div class="sasNote">       real time           0.00 seconds</div><div class="sasNote">       user cpu time       0.00 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              245.37k</div><div class="sasNote">       OS Memory           29608.00k</div><div class="sasNote">       Timestamp           30.01.2022 04:10:35 PM</div><div class="sasNote">       Step Count                        147  Switch Count  2</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     14</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        9</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           0</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 75         </div><div class="sasSource"> 76         </div><div class="sasSource"> 77         FILENAME REFFILE '/home/u59814750/ecem_breast_canser_data/breast_canser_data.csv';</div><div class="sasSource"> 78         </div><div class="sasSource"> 79         PROC IMPORT DATAFILE=REFFILE</div><div class="sasSource"> 80         DBMS=CSV</div><div class="sasSource"> 81         OUT=WORK.IMPORT1;</div><div class="sasSource"> 82         GETNAMES=YES;</div><div class="sasSource"> 83         RUN;</div><div class="sasNote"> </div><div class="sasSource"> NOTE: Unable to open parameter catalog: SASUSER.PARMS.PARMS.SLIST in update mode. Temporary parameter values will be saved to </div><div class="sasSource"> WORK.PARMS.PARMS.SLIST.</div><div class="sasSource"> 84          /**********************************************************************</div><div class="sasSource"> 85          *   PRODUCT:   SAS</div><div class="sasSource"> 86          *   VERSION:   9.4</div><div class="sasSource"> 87          *   CREATOR:   External File Interface</div><div class="sasSource"> 88          *   DATE:      30JAN22</div><div class="sasSource"> 89          *   DESC:      Generated SAS Datastep Code</div><div class="sasSource"> 90          *   TEMPLATE SOURCE:  (None Specified.)</div><div class="sasSource"> 91          ***********************************************************************/</div><div class="sasSource"> 92             data WORK.IMPORT1    ;</div><div class="sasSource"> 93             %let _EFIERR_ = 0; /* set the ERROR detection macro variable */</div><div class="sasSource"> 94             infile REFFILE delimiter = ',' MISSOVER DSD  firstobs=2 ;</div><div class="sasSource"> 95                informat Age best32. ;</div><div class="sasSource"> 96                informat Gender $6. ;</div><div class="sasSource"> 97                informat Protein1 best32. ;</div><div class="sasSource"> 98                informat Protein2 best32. ;</div><div class="sasSource"> 99                informat Protein3 best32. ;</div><div class="sasSource"> 100               informat Protein4 best32. ;</div><div class="sasSource"> 101               informat Tumour_Stage $3. ;</div><div class="sasSource"> 102               informat Histology $30. ;</div><div class="sasSource"> 103               informat ER_status $8. ;</div><div class="sasSource"> 104               informat PR_status $8. ;</div><div class="sasSource"> 105               informat HER1_status best32. ;</div><div class="sasSource"> 106               informat Surgery_type $27. ;</div><div class="sasSource"> 107               informat Patient_Status $5. ;</div><div class="sasSource"> 108               format Age best12. ;</div><div class="sasSource"> 109               format Gender $6. ;</div><div class="sasSource"> 110               format Protein1 best12. ;</div><div class="sasSource"> 111               format Protein2 best12. ;</div><div class="sasSource"> 112               format Protein3 best12. ;</div><div class="sasSource"> 113               format Protein4 best12. ;</div><div class="sasSource"> 114               format Tumour_Stage $3. ;</div><div class="sasSource"> 115               format Histology $30. ;</div><div class="sasSource"> 116               format ER_status $8. ;</div><div class="sasSource"> 117               format PR_status $8. ;</div><div class="sasSource"> 118               format HER1_status best12. ;</div><div class="sasSource"> 119               format Surgery_type $27. ;</div><div class="sasSource"> 120               format Patient_Status $5. ;</div><div class="sasSource"> 121            input</div><div class="sasSource"> 122                        Age</div><div class="sasSource"> 123                        Gender  $</div><div class="sasSource"> 124                        Protein1</div><div class="sasSource"> 125                        Protein2</div><div class="sasSource"> 126                        Protein3</div><div class="sasSource"> 127                        Protein4</div><div class="sasSource"> 128                        Tumour_Stage  $</div><div class="sasSource"> 129                        Histology  $</div><div class="sasSource"> 130                        ER_status  $</div><div class="sasSource"> 131                        PR_status  $</div><div class="sasSource"> 132                        HER1_status</div><div class="sasSource"> 133                        Surgery_type  $</div><div class="sasSource"> 134                        Patient_Status  $</div><div class="sasSource"> 135            ;</div><div class="sasSource"> 136            if _ERROR_ then call symputx('_EFIERR_',1);  /* set ERROR detection macro variable */</div><div class="sasSource"> 137            run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote3_1643559035626"> NOTE: The infile REFFILE is:</div><div class="sasNote">       Filename=/home/u59814750/ecem_breast_canser_data/breast_canser_data.csv,</div><div class="sasNote">       Owner Name=u59814750,Group Name=oda,</div><div class="sasNote">       Access Permission=-rw-r--r--,</div><div class="sasNote">       Last Modified=30 Ocak 2022 18:50:47,</div><div class="sasNote">       File Size (bytes)=38147</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote4_1643559035626"> NOTE: 321 records were read from the infile REFFILE.</div><div class="sasNote">       The minimum record length was 98.</div><div class="sasNote">       The maximum record length was 133.</div><div class="sasNote" id="sasLogNote5_1643559035626"> NOTE: The data set WORK.IMPORT1 has 321 observations and 13 variables.</div><div class="sasNote" id="sasLogNote6_1643559035626"> NOTE: DATA statement used (Total process time):</div><div class="sasNote">       real time           0.00 seconds</div><div class="sasNote">       user cpu time       0.00 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              9441.84k</div><div class="sasNote">       OS Memory           35108.00k</div><div class="sasNote">       Timestamp           30.01.2022 04:10:35 PM</div><div class="sasNote">       Step Count                        148  Switch Count  2</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     139</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        11</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           272</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 321 rows created in WORK.IMPORT1 from REFFILE.</div><div class="sasSource">   </div><div class="sasSource">   </div><div class="sasSource">   </div><div class="sasNote" id="sasLogNote7_1643559035626"> NOTE: WORK.IMPORT1 data set was successfully created.</div><div class="sasNote" id="sasLogNote8_1643559035626"> NOTE: The data set WORK.IMPORT1 has 321 observations and 13 variables.</div><div class="sasNote" id="sasLogNote9_1643559035626"> NOTE: PROCEDURE IMPORT used (Total process time):</div><div class="sasNote">       real time           0.07 seconds</div><div class="sasNote">       user cpu time       0.06 seconds</div><div class="sasNote">       system cpu time     0.01 seconds</div><div class="sasNote">       memory              9441.84k</div><div class="sasNote">       OS Memory           35108.00k</div><div class="sasNote">       Timestamp           30.01.2022 04:10:35 PM</div><div class="sasNote">       Step Count                        148  Switch Count  8</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     2809</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        76</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           320</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 138        </div><div class="sasSource"> 139        PROC CONTENTS DATA=WORK.IMPORT1; RUN;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote10_1643559035626"> NOTE: PROCEDURE CONTENTS used (Total process time):</div><div class="sasNote">       real time           0.04 seconds</div><div class="sasNote">       user cpu time       0.04 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              1802.37k</div><div class="sasNote">       OS Memory           30384.00k</div><div class="sasNote">       Timestamp           30.01.2022 04:10:35 PM</div><div class="sasNote">       Step Count                        149  Switch Count  0</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     93</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        0</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           16</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 140        </div><div class="sasSource"> 141        </div><div class="sasSource"> 142        %web_open_table(WORK.IMPORT1);</div><div class="sasSource"> 143        /* yorum satiri eklenebilir */</div><div class="sasSource"> 144        </div><div class="sasSource"> 145        proc freq data=IMPORT1;</div><div class="sasSource"> 146          tables HER1_status;</div><div class="sasSource"> 147        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote11_1643559035626"> NOTE: There were 321 observations read from the data set WORK.IMPORT1.</div><div class="sasNote" id="sasLogNote12_1643559035626"> NOTE: PROCEDURE FREQ used (Total process time):</div><div class="sasNote">       real time           0.01 seconds</div><div class="sasNote">       user cpu time       0.02 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              822.75k</div><div class="sasNote">       OS Memory           30384.00k</div><div class="sasNote">       Timestamp           30.01.2022 04:10:35 PM</div><div class="sasNote">       Step Count                        150  Switch Count  2</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     122</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        14</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           280</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 148        </div><div class="sasSource"> 149        proc corr data=IMPORT1 spearman;</div><div class="sasSource"> 150        var Protein1 Protein2 Protein3 Protein4;</div><div class="sasSource"> 151        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote13_1643559035626"> NOTE: PROCEDURE CORR used (Total process time):</div><div class="sasNote">       real time           0.04 seconds</div><div class="sasNote">       user cpu time       0.04 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              928.43k</div><div class="sasNote">       OS Memory           30124.00k</div><div class="sasNote">       Timestamp           30.01.2022 04:10:35 PM</div><div class="sasNote">       Step Count                        151  Switch Count  0</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     129</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        0</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           0</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 152        </div><div class="sasSource"> 153        proc discrim data=IMPORT1 can simple;</div><div class="sasSource"> 154        class HER1_status;</div><div class="sasSource"> 155        var Protein1 Protein2 Protein3 Protein4;</div><div class="sasSource"> 156        priors proportional;</div><div class="sasSource"> 157        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote14_1643559035626"> NOTE: There were 321 observations read from the data set WORK.IMPORT1.</div><div class="sasNote" id="sasLogNote15_1643559035626"> NOTE: PROCEDURE DISCRIM used (Total process time):</div><div class="sasNote">       real time           0.15 seconds</div><div class="sasNote">       user cpu time       0.16 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              1624.90k</div><div class="sasNote">       OS Memory           30644.00k</div><div class="sasNote">       Timestamp           30.01.2022 04:10:36 PM</div><div class="sasNote">       Step Count                        152  Switch Count  0</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     259</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        0</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           64</div><div class="sasNote">       </div><div class="sasNote"> </div><div class="sasSource"> 158        </div><div class="sasSource"> 159        proc stepdisc data=IMPORT1;</div><div class="sasSource"> 160        class HER1_status;</div><div class="sasSource"> 161        var Protein1 Protein2 Protein3 Protein4;</div><div class="sasSource"> 162        run;</div><div class="sasNote"> </div><div class="sasNote" id="sasLogNote16_1643559035626"> NOTE: There were 321 observations read from the data set WORK.IMPORT1.</div><div class="sasNote" id="sasLogNote17_1643559035626"> NOTE: PROCEDURE STEPDISC used (Total process time):</div><div class="sasNote">       real time           0.03 seconds</div><div class="sasNote">       user cpu time       0.03 seconds</div><div class="sasNote">       system cpu time     0.00 seconds</div><div class="sasNote">       memory              1380.68k</div><div class="sasNote">       OS Memory           30644.00k</div><div class="sasNote">       Timestamp           30.01.2022 04:10:36 PM</div><div class="sasNote">       Step Count                        153  Switch Count  0</div><div class="sasNote">       Page Faults                       0</div><div class="sasNote">       Page Reclaims                     189</div><div class="sasNote">       Page Swaps                        0</div><div class="sasNote">       Voluntary Context Switches        0</div><div class="sasNote">       Involuntary Context Switches      0</div><div class="sasNote">       Block Input Operations            0</div><div class="sasNote">       Block Output Operations           32</div><div class="sasNote">       </div></div><div><div class="sasNote"> </div><div class="sasSource"> 163        </div><div class="sasSource"> 164        OPTIONS NONOTES NOSTIMER NOSOURCE NOSYNTAXCHECK;</div><div class="sasSource"> 174        </div></div></pre></div></div>
+<p>
+</div>
+<div>
+<hr><h3>Results: Program 3</h3>
+<div id="div_842d3779-95ff-4af6-933a-0c875e650cab" class="ods_842d3779-95ff-4af6-933a-0c875e650cab">
+
+
+<meta charset="utf-8">
+<meta content="SAS 9.4" name="generator">
+<title>Results: Program 3</title>
+<style>
+/*<![CDATA[*/
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .body.c section > table, .ods_842d3779-95ff-4af6-933a-0c875e650cab .body.c section > pre, .ods_842d3779-95ff-4af6-933a-0c875e650cab .body.c div > table,
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .body.c div > pre, .ods_842d3779-95ff-4af6-933a-0c875e650cab .body.c article > table, .ods_842d3779-95ff-4af6-933a-0c875e650cab .body.c article > pre,
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .body.j section > table, .ods_842d3779-95ff-4af6-933a-0c875e650cab .body.j section > pre, .ods_842d3779-95ff-4af6-933a-0c875e650cab .body.j div > table,
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .body.j div > pre, .ods_842d3779-95ff-4af6-933a-0c875e650cab .body.j article > table, .ods_842d3779-95ff-4af6-933a-0c875e650cab .body.j article > pre,
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .body.c p.note, .ods_842d3779-95ff-4af6-933a-0c875e650cab .body.c p.warning, .ods_842d3779-95ff-4af6-933a-0c875e650cab .body.c p.error, .ods_842d3779-95ff-4af6-933a-0c875e650cab .body.c p.fatal,
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .body.j p.note, .ods_842d3779-95ff-4af6-933a-0c875e650cab .body.j p.warning, .ods_842d3779-95ff-4af6-933a-0c875e650cab .body.j p.error, .ods_842d3779-95ff-4af6-933a-0c875e650cab .body.j p.fatal,
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .body.c > table.layoutcontainer, .ods_842d3779-95ff-4af6-933a-0c875e650cab .body.j > table.layoutcontainer { margin-left: auto; margin-right: auto }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.l table, .ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.l pre, .ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.l p.note,
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.l p.warning, .ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.l p.error, .ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.l p.fatal { margin-left: 0 }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.c table, .ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.c pre, .ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.c p.note,
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.c p.warning, .ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.c p.error, .ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.c p.fatal { margin-left: auto; margin-right: auto }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.r table, .ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.r pre, .ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.r p.note,
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.r table, .ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.r pre, .ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.r p.note,
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.r p.warning, .ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.r p.error, .ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion.r p.fatal { margin-right: 0 }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab article, .ods_842d3779-95ff-4af6-933a-0c875e650cab aside, .ods_842d3779-95ff-4af6-933a-0c875e650cab details, .ods_842d3779-95ff-4af6-933a-0c875e650cab figcaption, .ods_842d3779-95ff-4af6-933a-0c875e650cab figure, .ods_842d3779-95ff-4af6-933a-0c875e650cab footer, .ods_842d3779-95ff-4af6-933a-0c875e650cab header, .ods_842d3779-95ff-4af6-933a-0c875e650cab hgroup, .ods_842d3779-95ff-4af6-933a-0c875e650cab nav, .ods_842d3779-95ff-4af6-933a-0c875e650cab section { display: block }
+html.ods_842d3779-95ff-4af6-933a-0c875e650cab { font-size: 100% }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .body { margin: 1em; font-size: 13px; line-height: 1.231 }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab sup { position: relative; vertical-align: baseline; bottom: 0.25em; font-size: 0.8em }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab sub { position: relative; vertical-align: baseline; top: 0.25em; font-size: 0.8em }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab ul, .ods_842d3779-95ff-4af6-933a-0c875e650cab ol { margin: 1em 0; padding: 0 0 0 40px }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab dd { margin: 0 0 0 40px }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab nav ul, .ods_842d3779-95ff-4af6-933a-0c875e650cab nav ol { list-style: none; list-style-image: none; margin: 0; padding: 0 }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab img { border: 0; vertical-align: middle }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab svg:not(:root) { overflow: hidden }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab figure { margin: 0 }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab table { border-collapse: collapse; border-spacing: 0 }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutcontainer { border-collapse: separate; border-spacing: 0 }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab p { margin-top: 0; text-align: left }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab h1.heading1 { text-align: left }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab h2.heading2 { text-align: left }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab h3.heading3 { text-align: left }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab h4.heading4 { text-align: left }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab h5.heading5 { text-align: left }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab h6.heading6 { text-align: left }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab span { text-align: left }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab table { margin-bottom: 1em }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab td, .ods_842d3779-95ff-4af6-933a-0c875e650cab th { text-align: left; padding: 3px 6px; vertical-align: top }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab td[class$="fixed"], .ods_842d3779-95ff-4af6-933a-0c875e650cab th[class$="fixed"] { white-space: pre }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab section, .ods_842d3779-95ff-4af6-933a-0c875e650cab article { padding-top: 1px; padding-bottom: 8px }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab hr.pagebreak { height: 0px; border: 0; border-bottom: 1px solid #c0c0c0; margin: 1em 0 }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .stacked-value { text-align: left; display: block }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .stacked-cell > .stacked-value, .ods_842d3779-95ff-4af6-933a-0c875e650cab td.data > td.data, .ods_842d3779-95ff-4af6-933a-0c875e650cab th.data > td.data, .ods_842d3779-95ff-4af6-933a-0c875e650cab th.data > th.data, .ods_842d3779-95ff-4af6-933a-0c875e650cab td.data > th.data, .ods_842d3779-95ff-4af6-933a-0c875e650cab th.header > th.header { border: 0 }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .stacked-cell > div.data { border-width: 0 }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .systitleandfootercontainer { white-space: nowrap; margin-bottom: 1em }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .systitleandfootercontainer > p { margin: 0 }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .systitleandfootercontainer > p > span { display: inline-block; width: 100%; white-space: normal }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .batch { display: table }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .toc { display: none }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .proc_note_group, .ods_842d3779-95ff-4af6-933a-0c875e650cab .proc_title_group { margin-bottom: 1em }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab p.proctitle { margin: 0 }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab p.note, .ods_842d3779-95ff-4af6-933a-0c875e650cab p.warning, .ods_842d3779-95ff-4af6-933a-0c875e650cab p.error, .ods_842d3779-95ff-4af6-933a-0c875e650cab p.fatal { display: table }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .notebanner, .ods_842d3779-95ff-4af6-933a-0c875e650cab .warnbanner, .ods_842d3779-95ff-4af6-933a-0c875e650cab .errorbanner, .ods_842d3779-95ff-4af6-933a-0c875e650cab .fatalbanner,
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .notecontent, .ods_842d3779-95ff-4af6-933a-0c875e650cab .warncontent, .ods_842d3779-95ff-4af6-933a-0c875e650cab .errorcontent, .ods_842d3779-95ff-4af6-933a-0c875e650cab .fatalcontent { display: table-cell; padding: 0.5em }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .notebanner, .ods_842d3779-95ff-4af6-933a-0c875e650cab .warnbanner, .ods_842d3779-95ff-4af6-933a-0c875e650cab .errorbanner, .ods_842d3779-95ff-4af6-933a-0c875e650cab .fatalbanner { padding-right: 0 }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .body > div > ol li { text-align: left }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .beforecaption > h4 { margin-top: 0; margin-bottom: 0 }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .c { text-align: center }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .r { text-align: right }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .l { text-align: left }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .j { text-align: justify }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .d { text-align: right }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .b { vertical-align: bottom }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .m { vertical-align: middle }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .t { vertical-align: top }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .accessiblecaption {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab a:active { color: #800080 }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .aftercaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    padding-top: 4pt;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .batch > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .batch > tbody, .ods_842d3779-95ff-4af6-933a-0c875e650cab .batch > thead, .ods_842d3779-95ff-4af6-933a-0c875e650cab .batch > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .batch { border: hidden; }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .batch {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: 'SAS Monospace', 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    padding: 7px;
+    }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .beforecaption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .body {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .bodydate {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: right;
+    vertical-align: top;
+    width: 100%;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .bycontentfolder {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .byline {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .bylinecontainer > col, .ods_842d3779-95ff-4af6-933a-0c875e650cab .bylinecontainer > colgroup > col, .ods_842d3779-95ff-4af6-933a-0c875e650cab .bylinecontainer > colgroup, .ods_842d3779-95ff-4af6-933a-0c875e650cab .bylinecontainer > tr, .ods_842d3779-95ff-4af6-933a-0c875e650cab .bylinecontainer > * > tr, .ods_842d3779-95ff-4af6-933a-0c875e650cab .bylinecontainer > thead, .ods_842d3779-95ff-4af6-933a-0c875e650cab .bylinecontainer > tbody, .ods_842d3779-95ff-4af6-933a-0c875e650cab .bylinecontainer > tfoot { border: none; }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .bylinecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .caption {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .cell, .ods_842d3779-95ff-4af6-933a-0c875e650cab .container {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .contentfolder, .ods_842d3779-95ff-4af6-933a-0c875e650cab .contentitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .contentproclabel, .ods_842d3779-95ff-4af6-933a-0c875e650cab .contentprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .contents {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .contentsdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .contenttitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .continued {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    width: 100%;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .data, .ods_842d3779-95ff-4af6-933a-0c875e650cab .dataemphasis {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .dataemphasisfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .dataempty {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .datafixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .datastrong {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .datastrongfixed {
+    background-color: #ffffff;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .date {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .document {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .errorbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .errorcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .errorcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .extendedpage {
+    background-color: #fafbfe;
+    border-style: solid;
+    border-width: 1pt;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+    text-align: center;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .fatalbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .fatalcontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .fatalcontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .folderaction {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .footer {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .footeremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .footeremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .footerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .footerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .footerstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .footerstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .frame {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .graph > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .graph > tbody, .ods_842d3779-95ff-4af6-933a-0c875e650cab .graph > thead, .ods_842d3779-95ff-4af6-933a-0c875e650cab .graph > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .graph { border: hidden; }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .graph {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .header {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .headeremphasis {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .headeremphasisfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .headerempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .headerfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .headersandfooters {
+    background-color: #edf2f9;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .headerstrong {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .headerstrongfixed {
+    background-color: #d8dbd3;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #000000;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .heading1, .ods_842d3779-95ff-4af6-933a-0c875e650cab .heading2, .ods_842d3779-95ff-4af6-933a-0c875e650cab .heading3, .ods_842d3779-95ff-4af6-933a-0c875e650cab .heading4, .ods_842d3779-95ff-4af6-933a-0c875e650cab .heading5, .ods_842d3779-95ff-4af6-933a-0c875e650cab .heading6 { font-family: Arial, Helvetica, sans-serif }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .index {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .indexaction, .ods_842d3779-95ff-4af6-933a-0c875e650cab .indexitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .indexprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .indextitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutcontainer, .ods_842d3779-95ff-4af6-933a-0c875e650cab .layoutregion {
+    border-width: 0;
+    border-spacing: 30px;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .linecontent {
+    background-color: #fafbfe;
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab a:link { color: #0000ff }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .list {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .list10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .list2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .list3, .ods_842d3779-95ff-4af6-933a-0c875e650cab .list4, .ods_842d3779-95ff-4af6-933a-0c875e650cab .list5, .ods_842d3779-95ff-4af6-933a-0c875e650cab .list6, .ods_842d3779-95ff-4af6-933a-0c875e650cab .list7, .ods_842d3779-95ff-4af6-933a-0c875e650cab .list8, .ods_842d3779-95ff-4af6-933a-0c875e650cab .list9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .listitem {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: disc;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .listitem10 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .listitem2 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: circle;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .listitem3, .ods_842d3779-95ff-4af6-933a-0c875e650cab .listitem4, .ods_842d3779-95ff-4af6-933a-0c875e650cab .listitem5, .ods_842d3779-95ff-4af6-933a-0c875e650cab .listitem6, .ods_842d3779-95ff-4af6-933a-0c875e650cab .listitem7, .ods_842d3779-95ff-4af6-933a-0c875e650cab .listitem8, .ods_842d3779-95ff-4af6-933a-0c875e650cab .listitem9 {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: square;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .note {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .notebanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .notecontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .notecontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .output > colgroup {
+    border-left: 1px solid #c1c1c1;
+    border-right: 1px solid #c1c1c1;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .output > tbody, .ods_842d3779-95ff-4af6-933a-0c875e650cab .output > thead, .ods_842d3779-95ff-4af6-933a-0c875e650cab .output > tfoot {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 1px solid #c1c1c1;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .output { border: hidden; }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .output {
+    background-color: #fafbfe;
+    border: 1px solid #c1c1c1;
+    border-collapse: separate;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .pageno {
+    background-color: #fafbfe;
+    border-spacing: 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    text-align: right;
+    vertical-align: top;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .pages {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: decimal;
+    margin-left: 8px;
+    margin-right: 8px;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .pagesdate {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .pagesitem {
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    list-style-type: none;
+    margin-left: 6pt;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .pagesproclabel, .ods_842d3779-95ff-4af6-933a-0c875e650cab .pagesprocname {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .pagestitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .paragraph {
+    background-color: #fafbfe;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .parskip > col, .ods_842d3779-95ff-4af6-933a-0c875e650cab .parskip > colgroup > col, .ods_842d3779-95ff-4af6-933a-0c875e650cab .parskip > colgroup, .ods_842d3779-95ff-4af6-933a-0c875e650cab .parskip > tr, .ods_842d3779-95ff-4af6-933a-0c875e650cab .parskip > * > tr, .ods_842d3779-95ff-4af6-933a-0c875e650cab .parskip > thead, .ods_842d3779-95ff-4af6-933a-0c875e650cab .parskip > tbody, .ods_842d3779-95ff-4af6-933a-0c875e650cab .parskip > tfoot { border: none; }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .parskip {
+    border: none;
+    border-spacing: 0;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+    }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .prepage {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    text-align: left;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .proctitle {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .proctitlefixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .rowfooter {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .rowfooteremphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .rowfooteremphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .rowfooterempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .rowfooterfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .rowfooterstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .rowfooterstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .rowheader {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .rowheaderemphasis {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .rowheaderemphasisfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: italic;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .rowheaderempty {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .rowheaderfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .rowheaderstrong {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .rowheaderstrongfixed {
+    background-color: #edf2f9;
+    border-color: #b0b7bb;
+    border-style: solid;
+    border-width: 0 1px 1px 0;
+    color: #112277;
+    font-family: 'Courier New', Courier, monospace;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .systemfooter, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemfooter10, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemfooter2, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemfooter3, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemfooter4, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemfooter5, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemfooter6, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemfooter7, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemfooter8, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemfooter9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .systemtitle, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemtitle10, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemtitle2, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemtitle3, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemtitle4, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemtitle5, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemtitle6, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemtitle7, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemtitle8, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systemtitle9 {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .systitleandfootercontainer > col, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systitleandfootercontainer > colgroup > col, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systitleandfootercontainer > colgroup, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systitleandfootercontainer > tr, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systitleandfootercontainer > * > tr, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systitleandfootercontainer > thead, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systitleandfootercontainer > tbody, .ods_842d3779-95ff-4af6-933a-0c875e650cab .systitleandfootercontainer > tfoot { border: none; }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .systitleandfootercontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .table > col, .ods_842d3779-95ff-4af6-933a-0c875e650cab .table > colgroup > col {
+    border-left: 1px solid #c1c1c1;
+    border-right: 0 solid #c1c1c1;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .table > tr, .ods_842d3779-95ff-4af6-933a-0c875e650cab .table > * > tr {
+    border-top: 1px solid #c1c1c1;
+    border-bottom: 0 solid #c1c1c1;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .table { border: hidden; }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .table {
+    border-color: #c1c1c1;
+    border-style: solid;
+    border-width: 1px 0 0 1px;
+    border-collapse: collapse;
+    border-spacing: 0;
+    }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .titleandnotecontainer > col, .ods_842d3779-95ff-4af6-933a-0c875e650cab .titleandnotecontainer > colgroup > col, .ods_842d3779-95ff-4af6-933a-0c875e650cab .titleandnotecontainer > colgroup, .ods_842d3779-95ff-4af6-933a-0c875e650cab .titleandnotecontainer > tr, .ods_842d3779-95ff-4af6-933a-0c875e650cab .titleandnotecontainer > * > tr, .ods_842d3779-95ff-4af6-933a-0c875e650cab .titleandnotecontainer > thead, .ods_842d3779-95ff-4af6-933a-0c875e650cab .titleandnotecontainer > tbody, .ods_842d3779-95ff-4af6-933a-0c875e650cab .titleandnotecontainer > tfoot { border: none; }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .titleandnotecontainer {
+    background-color: #fafbfe;
+    border: none;
+    border-spacing: 1px;
+    color: #000000;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+    width: 100%;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .titlesandfooters {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .usertext {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab a:visited { color: #800080 }
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .warnbanner {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: bold;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .warncontent {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: Arial, 'Albany AMT', Helvetica, Helv;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+.ods_842d3779-95ff-4af6-933a-0c875e650cab .warncontentfixed {
+    background-color: #fafbfe;
+    color: #112277;
+    font-family: 'Courier New', Courier;
+    font-size: x-small;
+    font-style: normal;
+    font-weight: normal;
+}
+/*]]>*/
+</style>
+
+
+<div id="div_842d3779-95ff-4af6-933a-0c875e650cab" class="c body">
+<h1 class="body toc">Results: Program 3</h1>
+<section data-name="Contents" data-sec-type="proc">
+<div id="IDX" class="proc_title_group">
+<p class="c proctitle">The CONTENTS Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Contents Procedure</h1>
+<section>
+<h1 class="contentfolder toc">WORK.IMPORT1</h1>
+<article aria-label="Attributes">
+<h1 class="contentitem toc">Attributes</h1>
+<table class="table" style="border-spacing: 0" aria-label="Attributes">
+<caption aria-label="Attributes"></caption>
+<colgroup><col><col><col><col></colgroup>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Data Set Name</th>
+<td class="data">WORK.IMPORT1</td>
+<th class="rowheader" scope="row">Observations</th>
+<td class="data">321</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Member Type</th>
+<td class="data">DATA</td>
+<th class="rowheader" scope="row">Variables</th>
+<td class="data">13</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Engine</th>
+<td class="data">V9</td>
+<th class="rowheader" scope="row">Indexes</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Created</th>
+<td class="data">30.01.2022 19:10:36</td>
+<th class="rowheader" scope="row">Observation Length</th>
+<td class="data">136</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Last Modified</th>
+<td class="data">30.01.2022 19:10:36</td>
+<th class="rowheader" scope="row">Deleted Observations</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protection</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">Compressed</th>
+<td class="data">NO</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Data Set Type</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">Sorted</th>
+<td class="data">NO</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Label</th>
+<td class="data">&nbsp;</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Data Representation</th>
+<td class="data">SOLARIS_X86_64, LINUX_X86_64, ALPHA_TRU64, LINUX_IA64</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Encoding</th>
+<td class="data">utf-8  Unicode (UTF-8)</td>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX1" aria-label="Engine/Host Information">
+<h1 class="contentitem toc">Engine/Host Information</h1>
+<table class="table" style="border-spacing: 0" aria-label="Engine/Host Information">
+<caption aria-label="Engine/Host Information"></caption>
+<colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Engine/Host Dependent Information</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Data Set Page Size</th>
+<td class="data">131072</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Data Set Pages</th>
+<td class="data">1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">First Data Page</th>
+<td class="data">1</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Max Obs per Page</th>
+<td class="data">962</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Obs in First Data Page</th>
+<td class="data">321</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Data Set Repairs</th>
+<td class="data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Filename</th>
+<td class="data">/saswork/SAS_work0961000037F2_odaws02-euw1.oda.sas.com/SAS_workAA9D000037F2_odaws02-euw1.oda.sas.com/import1.sas7bdat</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Release Created</th>
+<td class="data">9.0401M6</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Host Created</th>
+<td class="data">Linux</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Inode Number</th>
+<td class="data">1610612802</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Access Permission</th>
+<td class="data">rw-r--r--</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Owner Name</th>
+<td class="data">u59814750</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">File Size</th>
+<td class="data">256KB</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">File Size (bytes)</th>
+<td class="data">262144</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX2" aria-label="Variables">
+<h1 class="contentitem toc">Variables</h1>
+<table class="table" style="border-spacing: 0" aria-label="Variables">
+<caption aria-label="Variables"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="6" scope="colgroup">Alphabetic List of Variables and Attributes</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">#</th>
+<th class="b header" scope="col">Variable</th>
+<th class="b header" scope="col">Type</th>
+<th class="r b header" scope="col">Len</th>
+<th class="b header" scope="col">Format</th>
+<th class="b header" scope="col">Informat</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="data">Age</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">9</th>
+<td class="data">ER_status</td>
+<td class="data">Char</td>
+<td class="r data">8</td>
+<td class="data">$8.</td>
+<td class="data">$8.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">2</th>
+<td class="data">Gender</td>
+<td class="data">Char</td>
+<td class="r data">6</td>
+<td class="data">$6.</td>
+<td class="data">$6.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">11</th>
+<td class="data">HER1_status</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">8</th>
+<td class="data">Histology</td>
+<td class="data">Char</td>
+<td class="r data">30</td>
+<td class="data">$30.</td>
+<td class="data">$30.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">10</th>
+<td class="data">PR_status</td>
+<td class="data">Char</td>
+<td class="r data">8</td>
+<td class="data">$8.</td>
+<td class="data">$8.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">13</th>
+<td class="data">Patient_Status</td>
+<td class="data">Char</td>
+<td class="r data">5</td>
+<td class="data">$5.</td>
+<td class="data">$5.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">3</th>
+<td class="data">Protein1</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">4</th>
+<td class="data">Protein2</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">5</th>
+<td class="data">Protein3</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">6</th>
+<td class="data">Protein4</td>
+<td class="data">Num</td>
+<td class="r data">8</td>
+<td class="data">BEST12.</td>
+<td class="data">BEST32.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">12</th>
+<td class="data">Surgery_type</td>
+<td class="data">Char</td>
+<td class="r data">27</td>
+<td class="data">$27.</td>
+<td class="data">$27.</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">7</th>
+<td class="data">Tumour_Stage</td>
+<td class="data">Char</td>
+<td class="r data">3</td>
+<td class="data">$3.</td>
+<td class="data">$3.</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Freq" data-sec-type="proc">
+<hr class="pagebreak">
+<div id="IDX3" class="proc_title_group">
+<p class="c proctitle">The FREQ Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Freq Procedure</h1>
+<section>
+<h1 class="contentfolder toc">Table HER1_status</h1>
+<article aria-label="One-Way Frequencies">
+<h1 class="contentitem toc">One-Way Frequencies</h1>
+<table class="table" style="border-spacing: 0" aria-label="One-Way Frequencies">
+<caption aria-label="One-Way Frequencies"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="r b header" scope="col">HER1_status</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Percent</th>
+<th class="r b header" scope="col">Cumulative<br>Frequency</th>
+<th class="r b header" scope="col">Cumulative<br>Percent</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">292</td>
+<td class="r data">90.97</td>
+<td class="r data">292</td>
+<td class="r data">90.97</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">29</td>
+<td class="r data">9.03</td>
+<td class="r data">321</td>
+<td class="r data">100.00</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Corr" data-sec-type="proc">
+<hr class="pagebreak">
+<div id="IDX4" class="proc_title_group">
+<p class="c proctitle">The CORR Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Corr Procedure</h1>
+<article aria-label="Variables Information">
+<h1 class="contentitem toc">Variables Information</h1>
+<table class="table" style="border-spacing: 0" aria-label="Variables Information">
+<caption aria-label="Variables Information"></caption>
+<colgroup><col></colgroup><colgroup><col></colgroup>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">4  Variables:</th>
+<td class="data">Protein1 Protein2 Protein3 Protein4</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX5" aria-label="Simple Statistics">
+<h1 class="contentitem toc">Simple Statistics</h1>
+<table class="table" style="border-spacing: 0" aria-label="Simple Statistics">
+<caption aria-label="Simple Statistics"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="7" scope="colgroup">Simple Statistics</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Variable</th>
+<th class="r b header" scope="col">N</th>
+<th class="r b header" scope="col">Mean</th>
+<th class="r b header" scope="col">Std Dev</th>
+<th class="r b header" scope="col">Median</th>
+<th class="r b header" scope="col">Minimum</th>
+<th class="r b header" scope="col">Maximum</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data">321</td>
+<td class="r data" style="white-space: nowrap">-0.02648</td>
+<td class="r data">0.54669</td>
+<td class="r data">0.00565</td>
+<td class="r data" style="white-space: nowrap">-2.14460</td>
+<td class="r data">1.59360</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data">321</td>
+<td class="r data">0.95456</td>
+<td class="r data">0.90964</td>
+<td class="r data">1.00030</td>
+<td class="r data" style="white-space: nowrap">-0.97873</td>
+<td class="r data">3.40220</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data">321</td>
+<td class="r data" style="white-space: nowrap">-0.09328</td>
+<td class="r data">0.58798</td>
+<td class="r data" style="white-space: nowrap">-0.17720</td>
+<td class="r data" style="white-space: nowrap">-1.62740</td>
+<td class="r data">2.19340</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data">321</td>
+<td class="r data">0.00881</td>
+<td class="r data">0.62249</td>
+<td class="r data">0.04051</td>
+<td class="r data" style="white-space: nowrap">-2.02550</td>
+<td class="r data">1.62990</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX6" aria-label="Spearman Correlations">
+<h1 class="contentitem toc">Spearman Correlations</h1>
+<table class="table" style="border-spacing: 0" aria-label="Spearman Correlations">
+<caption aria-label="Spearman Correlations"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Spearman Correlation Coefficients, N = 321<br>Prob &gt; |r| under H0: Rho=0</th>
+</tr>
+<tr>
+<th class="c headerempty" scope="col">&nbsp;</th>
+<th class="r b header" scope="col">Protein1</th>
+<th class="r b header" scope="col">Protein2</th>
+<th class="r b header" scope="col">Protein3</th>
+<th class="r b header" scope="col">Protein4</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">1.00000</div>
+<div class="r">&nbsp;</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">0.23239</div>
+<div class="r">&lt;.0001</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r" style="white-space: nowrap">-0.11879</div>
+<div class="r">0.0334</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">0.22253</div>
+<div class="r">&lt;.0001</div>
+</div>
+</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">0.23239</div>
+<div class="r">&lt;.0001</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">1.00000</div>
+<div class="r">&nbsp;</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r" style="white-space: nowrap">-0.34369</div>
+<div class="r">&lt;.0001</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">0.09351</div>
+<div class="r">0.0944</div>
+</div>
+</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r" style="white-space: nowrap">-0.11879</div>
+<div class="r">0.0334</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r" style="white-space: nowrap">-0.34369</div>
+<div class="r">&lt;.0001</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">1.00000</div>
+<div class="r">&nbsp;</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">0.07602</div>
+<div class="r">0.1743</div>
+</div>
+</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">0.22253</div>
+<div class="r">&lt;.0001</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">0.09351</div>
+<div class="r">0.0944</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">0.07602</div>
+<div class="r">0.1743</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">1.00000</div>
+<div class="r">&nbsp;</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<section data-name="Discrim" data-sec-type="proc">
+<hr class="pagebreak">
+<div id="IDX7" class="proc_title_group">
+<p class="c proctitle">The DISCRIM Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Discrim Procedure</h1>
+<article aria-label="Counts">
+<h1 class="contentitem toc">Counts</h1>
+<table class="table" style="border-spacing: 0" aria-label="Counts">
+<caption aria-label="Counts"></caption>
+<colgroup><col><col><col><col></colgroup>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Total Sample Size</th>
+<td class="r data">321</td>
+<th class="rowheader" scope="row">DF Total</th>
+<td class="r data">320</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Variables</th>
+<td class="r data">4</td>
+<th class="rowheader" scope="row">DF Within Classes</th>
+<td class="r data">319</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Classes</th>
+<td class="r data">2</td>
+<th class="rowheader" scope="row">DF Between Classes</th>
+<td class="r data">1</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX8" aria-label="n Obs">
+<h1 class="contentitem toc">n Obs</h1>
+<table class="table" style="border-spacing: 0" aria-label="Observation Profile for Analysis Data">
+<caption aria-label="Observation Profile for Analysis Data"></caption>
+<colgroup><col><col></colgroup>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Number of Observations Read</th>
+<td class="r data">321</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Observations Used</th>
+<td class="r data">321</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX9" aria-label="Class Levels">
+<h1 class="contentitem toc">Class Levels</h1>
+<table class="table" style="border-spacing: 0" aria-label="Class Levels">
+<caption aria-label="Class Levels"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="6" scope="colgroup">Class Level Information</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">HER1_status</th>
+<th class="b header" scope="col">Variable<br>Name</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Weight</th>
+<th class="r b header" scope="col">Proportion</th>
+<th class="r b header" scope="col">Prior<br>Probability</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="data">0</td>
+<td class="r data">292</td>
+<td class="r data">292.0000</td>
+<td class="r data">0.909657</td>
+<td class="r data">0.909657</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="data">1</td>
+<td class="r data">29</td>
+<td class="r data">29.0000</td>
+<td class="r data">0.090343</td>
+<td class="r data">0.090343</td>
+</tr>
+</tbody>
+</table>
+</article>
+<hr class="pagebreak">
+<div id="IDX10" class="proc_title_group">
+<p class="c proctitle">The DISCRIM Procedure</p>
+<p class="c proctitle">Simple Statistics</p>
+</div>
+<section>
+<h1 class="contentfolder toc">Simple Statistics</h1>
+<article aria-label="Total">
+<h1 class="contentitem toc">Total</h1>
+<table class="table" style="border-spacing: 0" aria-label="Simple Statistics">
+<caption aria-label="Simple Statistics"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="6" scope="colgroup">Total-Sample</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Variable</th>
+<th class="r b header" scope="col">N</th>
+<th class="r b header" scope="col">Sum</th>
+<th class="r b header" scope="col">Mean</th>
+<th class="r b header" scope="col">Variance</th>
+<th class="r b header" scope="col">Standard<br>Deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data">321</td>
+<td class="r data" style="white-space: nowrap">-8.49989</td>
+<td class="r data" style="white-space: nowrap">-0.02648</td>
+<td class="r data">0.29887</td>
+<td class="r data">0.5467</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data">321</td>
+<td class="r data">306.41487</td>
+<td class="r data">0.95456</td>
+<td class="r data">0.82744</td>
+<td class="r data">0.9096</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data">321</td>
+<td class="r data" style="white-space: nowrap">-29.94241</td>
+<td class="r data" style="white-space: nowrap">-0.09328</td>
+<td class="r data">0.34572</td>
+<td class="r data">0.5880</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data">321</td>
+<td class="r data">2.82891</td>
+<td class="r data">0.00881</td>
+<td class="r data">0.38750</td>
+<td class="r data">0.6225</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="proc_note_group">
+<p class="proctitle"></p>
+</div>
+<article id="IDX11" aria-label="HER1_status = 0">
+<h1 class="contentitem toc">HER1_status = 0</h1>
+<table class="table" style="border-spacing: 0" aria-label="Simple Statistics">
+<caption aria-label="Simple Statistics"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="6" scope="colgroup">HER1_status = 0</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Variable</th>
+<th class="r b header" scope="col">N</th>
+<th class="r b header" scope="col">Sum</th>
+<th class="r b header" scope="col">Mean</th>
+<th class="r b header" scope="col">Variance</th>
+<th class="r b header" scope="col">Standard<br>Deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data">292</td>
+<td class="r data" style="white-space: nowrap">-6.04555</td>
+<td class="r data" style="white-space: nowrap">-0.02070</td>
+<td class="r data">0.28527</td>
+<td class="r data">0.5341</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data">292</td>
+<td class="r data">279.99957</td>
+<td class="r data">0.95890</td>
+<td class="r data">0.83029</td>
+<td class="r data">0.9112</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data">292</td>
+<td class="r data" style="white-space: nowrap">-26.23693</td>
+<td class="r data" style="white-space: nowrap">-0.08985</td>
+<td class="r data">0.35059</td>
+<td class="r data">0.5921</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data">292</td>
+<td class="r data">2.36419</td>
+<td class="r data">0.00810</td>
+<td class="r data">0.38506</td>
+<td class="r data">0.6205</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="proc_note_group">
+<p class="proctitle"></p>
+</div>
+<article id="IDX12" aria-label="HER1_status = 1">
+<h1 class="contentitem toc">HER1_status = 1</h1>
+<table class="table" style="border-spacing: 0" aria-label="Simple Statistics">
+<caption aria-label="Simple Statistics"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="6" scope="colgroup">HER1_status = 1</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Variable</th>
+<th class="r b header" scope="col">N</th>
+<th class="r b header" scope="col">Sum</th>
+<th class="r b header" scope="col">Mean</th>
+<th class="r b header" scope="col">Variance</th>
+<th class="r b header" scope="col">Standard<br>Deviation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data">29</td>
+<td class="r data" style="white-space: nowrap">-2.45434</td>
+<td class="r data" style="white-space: nowrap">-0.08463</td>
+<td class="r data">0.44705</td>
+<td class="r data">0.6686</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data">29</td>
+<td class="r data">26.41529</td>
+<td class="r data">0.91087</td>
+<td class="r data">0.82510</td>
+<td class="r data">0.9084</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data">29</td>
+<td class="r data" style="white-space: nowrap">-3.70547</td>
+<td class="r data" style="white-space: nowrap">-0.12777</td>
+<td class="r data">0.30607</td>
+<td class="r data">0.5532</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data">29</td>
+<td class="r data">0.46472</td>
+<td class="r data">0.01602</td>
+<td class="r data">0.42662</td>
+<td class="r data">0.6532</td>
+</tr>
+</tbody>
+</table>
+</article>
+<div class="proc_note_group">
+<p class="proctitle"></p>
+</div>
+</section>
+<article id="IDX13" aria-label="Determinant">
+<h1 class="contentitem toc">Determinant</h1>
+<table class="table" style="border-spacing: 0" aria-label="Determinant">
+<caption aria-label="Determinant"></caption>
+<colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Pooled Covariance Matrix Information</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">Covariance<br>Matrix Rank</th>
+<th class="r b header" scope="col">Natural Log of the<br>Determinant of the<br>Covariance Matrix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td class="r data">4</td>
+<td class="r data" style="white-space: nowrap">-3.72126</td>
+</tr>
+</tbody>
+</table>
+</article>
+<hr class="pagebreak">
+<div id="IDX14" class="proc_title_group">
+<p class="c proctitle">The DISCRIM Procedure</p>
+</div>
+<section>
+<h1 class="contentfolder toc">Squared Distances</h1>
+<article aria-label="Generalized">
+<h1 class="contentitem toc">Generalized</h1>
+<table class="table" style="border-spacing: 0" aria-label="Generalized Squared Distance to HER1_status">
+<caption aria-label="Generalized Squared Distance to HER1_status"></caption>
+<colgroup><col></colgroup><colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="3" scope="colgroup">Generalized Squared Distance to HER1_status</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">From HER1_status</th>
+<th class="r b header" scope="col">0</th>
+<th class="r b header" scope="col">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">0.18937</td>
+<td class="r data">4.83532</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">0.21641</td>
+<td class="r data">4.80829</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<hr class="pagebreak">
+<div id="IDX15" class="proc_title_group">
+<p class="c proctitle">The DISCRIM Procedure</p>
+<p class="c proctitle">Canonical Discriminant Analysis</p>
+</div>
+<section>
+<h1 class="contentfolder toc">Canonical Analysis</h1>
+<article aria-label="Canonical Correlations">
+<h1 class="contentitem toc">Canonical Correlations</h1>
+<table class="table" style="border-spacing: 0" aria-label="Canonical Correlations">
+<caption aria-label="Canonical Correlations"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col><col><col><col><col><col><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c headerempty" scope="col">&nbsp;</th>
+<th class="r b header" rowspan="2" scope="col">Canonical<br>Correlation</th>
+<th class="r b header" rowspan="2" scope="col">Adjusted<br>Canonical<br>Correlation</th>
+<th class="r b header" rowspan="2" scope="col">Approximate<br>Standard<br>Error</th>
+<th class="r b header" rowspan="2" scope="col">Squared<br>Canonical<br>Correlation</th>
+<th class="c b header" colspan="4" scope="colgroup">Eigenvalues of Inv(E)*H<br>= CanRsq/(1-CanRsq)</th>
+<th class="c b header" colspan="5" scope="colgroup">Test&nbsp;of&nbsp;H0:&nbsp;The&nbsp;canonical&nbsp;correlations&nbsp;in&nbsp;the&nbsp;current&nbsp;row&nbsp;and&nbsp;all&nbsp;that&nbsp;follow&nbsp;are&nbsp;zero</th>
+</tr>
+<tr>
+<th class="c headerempty" scope="col">&nbsp;</th>
+<th class="r b header" scope="col">Eigenvalue</th>
+<th class="r b header" scope="col">Difference</th>
+<th class="r b header" scope="col">Proportion</th>
+<th class="r b header" scope="col">Cumulative</th>
+<th class="r b header" scope="col">Likelihood<br>Ratio</th>
+<th class="r b header" scope="col">Approximate<br>F Value</th>
+<th class="r b header" scope="col">Num&nbsp;DF</th>
+<th class="r b header" scope="col">Den&nbsp;DF</th>
+<th class="r b header" scope="col">Pr&nbsp;&gt;&nbsp;F</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">0.047229</td>
+<td class="r data" style="white-space: nowrap">-.051725</td>
+<td class="r data">0.055777</td>
+<td class="r data">0.002231</td>
+<td class="r data">0.0022</td>
+<td class="r data">&nbsp;</td>
+<td class="r data">1.0000</td>
+<td class="r data">1.0000</td>
+<td class="r data">0.99776939</td>
+<td class="r data">0.18</td>
+<td class="r data">4</td>
+<td class="r data">316</td>
+<td class="r data">0.9504</td>
+</tr>
+</tbody>
+</table>
+<div class="proc_note_group">
+<p class="c note"><span class="c notebanner">Note:</span><span class="c notecontent">The F statistic is exact.</span></p>
+</div>
+</article>
+<hr class="pagebreak">
+<div id="IDX16" class="proc_title_group">
+<p class="c proctitle">The DISCRIM Procedure</p>
+<p class="c proctitle">Canonical Discriminant Analysis</p>
+</div>
+<section>
+<h1 class="contentfolder toc">Structure</h1>
+<article aria-label="Total">
+<h1 class="contentitem toc">Total</h1>
+<table class="table" style="border-spacing: 0" aria-label="Total Canonical Structure">
+<caption aria-label="Total Canonical Structure"></caption>
+<colgroup><col></colgroup><colgroup><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Total Canonical Structure</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Variable</th>
+<th class="r b header" scope="col">Can1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data">0.710893</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data">0.320997</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data">0.392088</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data" style="white-space: nowrap">-0.077428</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX17" aria-label="Between">
+<h1 class="contentitem toc">Between</h1>
+<table class="table" style="border-spacing: 0" aria-label="Between Canonical Structure">
+<caption aria-label="Between Canonical Structure"></caption>
+<colgroup><col></colgroup><colgroup><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Between Canonical Structure</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Variable</th>
+<th class="r b header" scope="col">Can1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data">1.000000</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data">1.000000</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data">1.000000</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data" style="white-space: nowrap">-1.000000</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX18" aria-label="Pooled">
+<h1 class="contentitem toc">Pooled</h1>
+<table class="table" style="border-spacing: 0" aria-label="Pooled Within Canonical Structure">
+<caption aria-label="Pooled Within Canonical Structure"></caption>
+<colgroup><col></colgroup><colgroup><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Pooled Within Canonical Structure</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Variable</th>
+<th class="r b header" scope="col">Can1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data">0.710501</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data">0.320675</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data">0.391718</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data" style="white-space: nowrap">-0.077342</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<hr class="pagebreak">
+<div id="IDX19" class="proc_title_group">
+<p class="c proctitle">The DISCRIM Procedure</p>
+<p class="c proctitle">Canonical Discriminant Analysis</p>
+</div>
+<section>
+<h1 class="contentfolder toc">Coefficients</h1>
+<article aria-label="Total">
+<h1 class="contentitem toc">Total</h1>
+<table class="table" style="border-spacing: 0" aria-label="Total-Sample Standardized Canonical Coefficients">
+<caption aria-label="Total-Sample Standardized Canonical Coefficients"></caption>
+<colgroup><col></colgroup><colgroup><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Total-Sample Standardized Canonical Coefficients</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Variable</th>
+<th class="r b header" scope="col">Can1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data">0.7782076270</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data">0.4534892184</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data">0.6944233649</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data" style="white-space: nowrap">-.3678941582</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX20" aria-label="Pooled">
+<h1 class="contentitem toc">Pooled</h1>
+<table class="table" style="border-spacing: 0" aria-label="Pooled Within-Class Standardized Canonical Coefficients">
+<caption aria-label="Pooled Within-Class Standardized Canonical Coefficients"></caption>
+<colgroup><col></colgroup><colgroup><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Pooled Within-Class Standardized Canonical Coefficients</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Variable</th>
+<th class="r b header" scope="col">Can1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data">0.7789869936</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data">0.4541472609</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data">0.6953916891</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data" style="white-space: nowrap">-.3684678799</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX21" aria-label="Raw">
+<h1 class="contentitem toc">Raw</h1>
+<table class="table" style="border-spacing: 0" aria-label="Raw Canonical Coefficients">
+<caption aria-label="Raw Canonical Coefficients"></caption>
+<colgroup><col></colgroup><colgroup><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Raw Canonical Coefficients</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Variable</th>
+<th class="r b header" scope="col">Can1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data">1.423493472</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data">0.498539711</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data">1.181030796</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data" style="white-space: nowrap">-0.591002764</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<article id="IDX22" aria-label="Class Means">
+<h1 class="contentitem toc">Class Means</h1>
+<table class="table" style="border-spacing: 0" aria-label="Class Means on Canonical Variables">
+<caption aria-label="Class Means on Canonical Variables"></caption>
+<colgroup><col></colgroup><colgroup><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="2" scope="colgroup">Class Means on Canonical Variables</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">HER1_status</th>
+<th class="r b header" scope="col">Can1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">0.0148541176</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data" style="white-space: nowrap">-.1495655980</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+<hr class="pagebreak">
+<div id="IDX23" class="proc_title_group">
+<p class="c proctitle">The DISCRIM Procedure</p>
+</div>
+<article aria-label="Linear Discriminant Function">
+<h1 class="contentitem toc">Linear Discriminant Function</h1>
+<table class="table" style="border-spacing: 0" aria-label="Linear Discriminant Function">
+<caption aria-label="Linear Discriminant Function"></caption>
+<colgroup><col></colgroup><colgroup><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="3" scope="colgroup">Linear Discriminant Function for HER1_status</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Variable</th>
+<th class="r b header" scope="col">0</th>
+<th class="r b header" scope="col">1</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Constant</th>
+<td class="r data" style="white-space: nowrap">-0.73624</td>
+<td class="r data" style="white-space: nowrap">-3.00370</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data" style="white-space: nowrap">-0.51280</td>
+<td class="r data" style="white-space: nowrap">-0.74685</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data">1.38055</td>
+<td class="r data">1.29858</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data">0.56440</td>
+<td class="r data">0.37022</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data" style="white-space: nowrap">-0.07453</td>
+<td class="r data">0.02264</td>
+</tr>
+</tbody>
+</table>
+</article>
+<hr class="pagebreak">
+<div id="IDX24" class="proc_title_group">
+<p class="c proctitle">The DISCRIM Procedure</p>
+<p class="c proctitle">Classification Summary for Calibration Data: WORK.IMPORT1</p>
+<p class="c proctitle">Resubstitution Summary using Linear Discriminant Function</p>
+</div>
+<section>
+<h1 class="contentfolder toc">Resubstitution</h1>
+<article aria-label="Number Classified">
+<h1 class="contentitem toc">Number Classified</h1>
+<table class="table" style="border-spacing: 0" aria-label="Number Classified">
+<caption aria-label="Number Classified"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Number of Observations and Percent Classified into HER1_status</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">From HER1_status</th>
+<th class="r b header" scope="col">0</th>
+<th class="r b header" scope="col">1</th>
+<th class="r b header" scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">292</div>
+<div class="r">100.00</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">0</div>
+<div class="r">0.00</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">292</div>
+<div class="r">100.00</div>
+</div>
+</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">29</div>
+<div class="r">100.00</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">0</div>
+<div class="r">0.00</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">29</div>
+<div class="r">100.00</div>
+</div>
+</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Total</th>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">321</div>
+<div class="r">100.00</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">0</div>
+<div class="r">0.00</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">321</div>
+<div class="r">100.00</div>
+</div>
+</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">Priors</th>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">0.90966</div>
+<div class="r">&nbsp;</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">0.09034</div>
+<div class="r">&nbsp;</div>
+</div>
+</td>
+<td class="r data">
+<div class="stacked-cell">
+<div class="r">&nbsp;</div>
+<div class="r">&nbsp;</div>
+</div>
+</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX25" aria-label="Error Counts">
+<h1 class="contentitem toc">Error Counts</h1>
+<table class="table" style="border-spacing: 0" aria-label="Error Counts">
+<caption aria-label="Error Counts"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">Error Count Estimates for HER1_status</th>
+</tr>
+<tr>
+<th class="c headerempty" scope="col">&nbsp;</th>
+<th class="r b header" scope="col">0</th>
+<th class="r b header" scope="col">1</th>
+<th class="r b header" scope="col">Total</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Rate</th>
+<td class="r data">0.0000</td>
+<td class="r data">1.0000</td>
+<td class="r data">0.0903</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Priors</th>
+<td class="r data">0.9097</td>
+<td class="r data">0.0903</td>
+<td class="r data">&nbsp;</td>
+</tr>
+</tbody>
+</table>
+</article>
+</section>
+</section>
+<section data-name="Stepdisc" data-sec-type="proc">
+<hr class="pagebreak">
+<div id="IDX26" class="proc_title_group">
+<p class="c proctitle">The STEPDISC Procedure</p>
+</div>
+<h1 class="contentprocname toc">The Stepdisc Procedure</h1>
+<article aria-label="Counts">
+<h1 class="contentitem toc">Counts</h1>
+<table class="table" style="border-spacing: 0" aria-label="Counts">
+<caption aria-label="Counts"></caption>
+<colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="4" scope="colgroup">The Method for Selecting Variables is STEPWISE</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Total Sample Size</th>
+<td class="r data">321</td>
+<th class="rowheader" scope="row">Variable(s) in the Analysis</th>
+<td class="r data">4</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Class Levels</th>
+<td class="r data">2</td>
+<th class="rowheader" scope="row">Variable(s) Will Be Included</th>
+<td class="r data">0</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="r data">&nbsp;</td>
+<th class="rowheader" scope="row">Significance Level to Enter</th>
+<td class="r data">0.15</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">&nbsp;</th>
+<td class="r data">&nbsp;</td>
+<th class="rowheader" scope="row">Significance Level to Stay</th>
+<td class="r data">0.15</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX27" aria-label="n Obs">
+<h1 class="contentitem toc">n Obs</h1>
+<table class="table" style="border-spacing: 0" aria-label="Observation Profile for Analysis Data">
+<caption aria-label="Observation Profile for Analysis Data"></caption>
+<colgroup><col><col></colgroup>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Number of Observations Read</th>
+<td class="r data">321</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Number of Observations Used</th>
+<td class="r data">321</td>
+</tr>
+</tbody>
+</table>
+</article>
+<article id="IDX28" aria-label="Class Levels">
+<h1 class="contentitem toc">Class Levels</h1>
+<table class="table" style="border-spacing: 0" aria-label="Class Levels">
+<caption aria-label="Class Levels"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Class Level Information</th>
+</tr>
+<tr>
+<th class="r b header" scope="col">HER1_status</th>
+<th class="b header" scope="col">Variable<br>Name</th>
+<th class="r b header" scope="col">Frequency</th>
+<th class="r b header" scope="col">Weight</th>
+<th class="r b header" scope="col">Proportion</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="r rowheader" scope="row">0</th>
+<td class="data">0</td>
+<td class="r data">292</td>
+<td class="r data">292.0000</td>
+<td class="r data">0.909657</td>
+</tr>
+<tr>
+<th class="r rowheader" scope="row">1</th>
+<td class="data">1</td>
+<td class="r data">29</td>
+<td class="r data">29.0000</td>
+<td class="r data">0.090343</td>
+</tr>
+</tbody>
+</table>
+</article>
+<hr class="pagebreak">
+<div id="IDX29" class="proc_title_group">
+<p class="c proctitle">The STEPDISC Procedure</p>
+<p class="c proctitle">Stepwise Selection: Step 1</p>
+</div>
+<section>
+<h1 class="contentfolder toc">Step 1</h1>
+<article aria-label="Entry Statistics">
+<h1 class="contentitem toc">Entry Statistics</h1>
+<table class="table" style="border-spacing: 0" aria-label="Entry Statistics">
+<caption aria-label="Entry Statistics"></caption>
+<colgroup><col></colgroup><colgroup><col><col><col><col></colgroup>
+<thead>
+<tr>
+<th class="c b header" colspan="5" scope="colgroup">Statistics for Entry, DF = 1, 319</th>
+</tr>
+<tr>
+<th class="b header" scope="col">Variable</th>
+<th class="r b header" scope="col">R-Square</th>
+<th class="r b header" scope="col">F Value</th>
+<th class="r b header" scope="col">Pr&nbsp;&gt;&nbsp;F</th>
+<th class="r b header" scope="col">Tolerance</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<th class="rowheader" scope="row">Protein1</th>
+<td class="r data">0.0011</td>
+<td class="r data">0.36</td>
+<td class="r data">0.5489</td>
+<td class="r data">1.0000</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein2</th>
+<td class="r data">0.0002</td>
+<td class="r data">0.07</td>
+<td class="r data">0.7867</td>
+<td class="r data">1.0000</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein3</th>
+<td class="r data">0.0003</td>
+<td class="r data">0.11</td>
+<td class="r data">0.7410</td>
+<td class="r data">1.0000</td>
+</tr>
+<tr>
+<th class="rowheader" scope="row">Protein4</th>
+<td class="r data">0.0000</td>
+<td class="r data">0.00</td>
+<td class="r data">0.9480</td>
+<td class="r data">1.0000</td>
+</tr>
+</tbody>
+</table>
+</article>
+<table id="IDX30" class="table" style="border-spacing: 0" aria-label="Messages">
+<caption aria-label="Messages"></caption>
+<colgroup><col></colgroup>
+<tbody>
+<tr>
+<td class="c data">No variables can be entered.</td>
+</tr>
+</tbody>
+</table>
+</section>
+<table id="IDX31" class="table" style="border-spacing: 0" aria-label="Messages">
+<caption aria-label="Messages"></caption>
+<colgroup><col></colgroup>
+<tbody>
+<tr>
+<td class="c data">No further steps are possible.</td>
+</tr>
+</tbody>
+</table>
+</section>
+</div>
+
+
+</div>
+<p>
+</div>
+</body></html>

@@ -1,0 +1,162 @@
+---
+title: "CDA ECEM"
+author: "ecem"
+date: "1/26/2022"
+output: html_document
+---
+
+```{r}
+library(haven)
+breast_cancer_data <- read_sav("breast_canser_data.sav")
+View(breast_cancer_data)
+```
+
+
+```{r}
+breast_cancer_data<-as.data.frame(breast_cancer_data)
+summary(breast_cancer_data)
+breast_cancer_data$Surgery_type<-factor(breast_cancer_data$Surgery_type,levels = c("Simple_Mastectomy","Other","Modified_Radical_Mastectomy","Lumpectomy"),labels=c("Simple_Mastectomy","Other","Modified_Radical_Mastectomy","Lumpectomy"))
+breast_cancer_data$Tumour_Stage<-factor(breast_cancer_data$Tumour_Stage,levels = c("I","II","III"),labels=c("I","II","III"))
+summary(breast_cancer_data)
+breast_cancer_data$HER1_status<-factor(breast_cancer_data$HER1_status,levels = c("0","1"),labels=c("0","1"))
+summary(breast_cancer_data)
+```
+```{r}
+na.omit(breast_cancer_data$Tumour_Stage)
+View(breast_cancer_data)
+```
+
+#Grup gozlem dagilimi
+```{r}
+library(dplyr)
+breast_cancer_data %>%
+  group_by(Surgery_type) %>%
+  dplyr::summarise(N = n())
+```
+#Degiskenlere Göre Ortalamalar ve Ortalama Çizimleri
+#Surgery duzeyleri bazında degisken ortalamaları ve sapmalar
+```{r}
+library(dplyr)
+breast_cancer_data %>% 
+  group_by(Surgery_type) %>%
+  summarise(across(c(Protein2,Protein3,Protein4), list(mean=mean,sd=sd)))
+```
+
+#Tumour stage duzeyleri bazında degisken ortalamaları
+```{r}
+breast_cancer_data %>% 
+  group_by(Tumour_Stage) %>%
+  summarise(across(c(Protein2,Protein3,Protein4), list(mean=mean,sd=sd)))
+```
+
+
+#Surgery_type icin :
+```{r}
+library(gplots)
+plotmeans(Protein2~Surgery_type,xlab="Surgery_type",ylab="Protein2", main="Mean Plot\nwith 95% CI",data=breast_cancer_data)
+plotmeans(Protein3~Surgery_type, xlab="Surgery_type",ylab="Protein3", main="Mean Plot\nwith 95% CI",data=breast_cancer_data)
+plotmeans(Protein4~Surgery_type, xlab="Surgery_type",ylab="Protein4", main="Mean Plot\nwith 95% CI",data=breast_cancer_data)
+```
+#Tumour stage icin :
+```{r}
+plotmeans(Protein2~Tumour_Stage,xlab="Tumour_Stage",ylab="Protein2", main="Mean Plot\nwith 95% CI",data=breast_cancer_data)
+plotmeans(Protein3~Tumour_Stage, xlab="Tumour_Stage",ylab="Protein3", main="Mean Plot\nwith 95% CI",data=breast_cancer_data)
+plotmeans(Protein4~Tumour_Stage, xlab="Tumour_Stage",ylab="Protein4", main="Mean Plot\nwith 95% CI",data=breast_cancer_data)
+```
+#Multivariate Normality
+```{r}
+library(dplyr)
+library(rstatix)
+breast_cancer_data %>%
+  dplyr::select(Age,Protein2,Protein3,Protein4) %>%
+  mshapiro_test()
+```
+
+#Homogeneity of Covariances
+```{r}
+library(biotools)
+box_m(breast_cancer_data[, c("Protein2","Protein3","Protein4")], breast_cancer_data$Surgery_type)
+```
+#MANOVA  
+```{r}
+breast_cancer_data_manova <- manova(cbind(Protein2,Protein3,Protein4) ~ Surgery_type,data=breast_cancer_data)
+summary(breast_cancer_data_manova, test = "Hotelling-Lawley")
+summary(breast_cancer_data_manova, test = "Wilks")
+summary(breast_cancer_data_manova, test = "Pillai")
+summary(breast_cancer_data_manova, test = "Roy")
+```
+#Tek tek bu şekilde levene testleri elde edilebilir
+#Homogeneity of variance- Levene's Test
+```{r}
+library(car)
+leveneTest(Protein2 ~ Surgery_type, data=breast_cancer_data,center=mean)
+leveneTest(Protein3 ~ Surgery_type, data=breast_cancer_data,center=mean)
+leveneTest(Protein4 ~ Surgery_type, data=breast_cancer_data,center=mean)
+```
+### Test of Between Subjects####Farkliligi yaratan degisken hangisi ?
+```{r}
+summary.aov(breast_cancer_data_manova)
+```
+#Levene sonuclarina gore: Kalıcılık icin Tukey, Tatmin ve Sahiplenme icin Games Howell’a bakılmalıdır
+
+# Çoklu Karsilastirmalar (Multiple Comparisons)
+#Levene- Equal variances -Tukey
+#Protein2 için (tek degisken oldugu icin bu sekilde bakildi)
+```{r}
+Protein2_aov <- aov(Protein2 ~ Surgery_type, data = breast_cancer_data)
+TukeyHSD(Protein2_aov, "Surgery_type")
+```
+```{r}
+Protein3_aov <- aov(Protein3 ~ Surgery_type, data = breast_cancer_data)
+TukeyHSD(Protein3_aov, "Surgery_type")
+```
+```{r}
+#Levene- Not equal variances  - Games Howell
+gh_tek<-games_howell_test(breast_cancer_data,Protein3 ~ Surgery_type)
+gh_tek<-gh_tek[,c(1,3,2,4:8)]
+gh_tek
+```
+#Levene- Not equal variances  - Games Howell
+```{r}
+gh_tek<-games_howell_test(breast_cancer_data,Protein4 ~ Surgery_type)
+gh_tek<-gh_tek[,c(1,3,2,4:8)]
+gh_tek
+```
+###Çift Yönlü Manova
+
+```{r}
+library(heplots)
+boxM( cbind(Protein2,Protein3,Protein4) ~ Surgery_type*Tumour_Stage, data=breast_cancer_data)
+
+```
+
+```{r}
+#MANOVA  
+Surgery_type_cift <- manova(cbind(Protein2,Protein3,Protein4) ~ Surgery_type*Tumour_Stage, data=breast_cancer_data)
+#Sadece wilks alindi ornek icin, uygun olan secilebilir
+summary(Surgery_type_cift, test = "Wilks")
+```
+#Homogeneity of variance- Levene's Test
+```{r}
+library(car)
+library(tidyr)
+library(dplyr)
+breast_cancer_data %>% 
+  pivot_longer( c(Protein2,Protein3,Protein4),names_to = "variable", values_to = "value") %>%
+  group_by(variable) %>%
+  levene_test(value ~ Surgery_type*Tumour_Stage,center=mean)
+```
+
+
+### Test of Between Subjects####Farklilik yaratan degisken hangisi ?
+```{r}
+summary.aov(Surgery_type_cift)
+```
+#Surgery_type ve Tumour_Stage için Etkilesim Grafikleri (Interaction Plots) 
+```{r}
+attach(breast_cancer_data)
+interaction.plot(Tumour_Stage,Surgery_type,Protein2, fun=mean, type="l", legend=TRUE,col=1:3, lwd=2)
+interaction.plot(Tumour_Stage,Surgery_type,Protein3, fun=mean, type="l", legend=TRUE, col=1:3,lwd=2)
+detach(breast_cancer_data)
+```
+

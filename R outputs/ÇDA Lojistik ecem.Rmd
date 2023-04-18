@@ -1,0 +1,114 @@
+---
+title: "cda ecem"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+```{r}
+library(haven)
+breast_canser_data <- read_sav("breast_canser_data.sav")
+View(breast_canser_data)
+```
+
+```{r}
+library(GGally)
+breast_canser<-breast_canser_data[, c(3,4,5,6,11)]   
+View(breast_canser)
+```
+
+```{r}
+breast_canser$HER1_status <- factor(breast_canser$HER1_status, levels=c(0,1),labels=c("negative","positive") ) 
+summary(breast_canser)
+```
+
+```{r}
+#korelasyon
+library(corrplot)
+library(matlib)
+korelasyon<-corrplot(cor(breast_canser[,-5]), method="number") 
+invkor<-inv(korelasyon$corr)# korelasyon matrisinin tersi (VIF)
+invkor
+```
+```{r}
+#Logistic Regresyon 
+model_breast_canser <- glm(HER1_status ~ Protein1+Protein2+Protein3+Protein4, family = "binomial", data = breast_canser)
+summary(model_breast_canser)
+```
+
+```{r}
+### SPSS OBNİMUS TESTS OF MODEL COEFFİCİENTS TABLOSU  ###
+
+#Ki-kare istatistginin hesabi
+model_breast_canser$deviance
+model_breast_canser$null.deviance
+kikare<- model_breast_canser$null.deviance-model_breast_canser$deviance
+kikare
+```
+
+```{r}
+#serbestlik derecesi hesabi
+model_breast_canser$df.null
+model_breast_canser$df.residual
+df<-model_breast_canser$df.null-model_breast_canser$df.residual
+df
+```
+
+```{r}
+#Ki kare istatistigine ait p degerinin hesabi (p<0.05 ise eklenen degiskenlerin modele katkisi anlamlidir.)
+kikare.p<- 1 - pchisq(kikare,df)
+kikare.p
+```
+
+```{r}
+###Hoshmer Lemeshov hesabi (p>0.05 ise model anlamlıdır. yani model veriye uyumludur.)
+
+library(ResourceSelection)
+hoslem.test(model_breast_canser$y,fitted(model_breast_canser))
+```
+
+```{r}
+#Modelin R^2 degerlerinin hesabi 
+
+library("DescTools")
+PseudoR2(model_breast_canser, which = c("CoxSnell","Nagelkerke"))
+```
+
+
+```{r}
+#Model katsayilarinin exponential alinmis hali ve güven araliklari
+exp(coef(model_breast_canser))
+exp(confint.default(model_breast_canser,level = 0.95)) 
+```
+
+```{r}
+#Atama Tablosu
+type_pred<-fitted(model_breast_canser)
+typefac<- ifelse(type_pred>0.5,"B","A")
+t_tab <- table(breast_canser$HER1_status, typefac)
+t_tab
+```
+
+```{r}
+#Toplam Dogru Atanma Yüzdesi
+sum(diag(t_tab)) / sum(t_tab)
+```
+
+```{r}
+#Atama Tablosu Görselleştirme
+library(cvms)
+library(ggplot2)
+library(broom)    # tidy()
+library(tibble)   # tibble()
+datatib <- tibble("target" = breast_canser$HER1_status,"prediction" = typefac)
+datatib
+basic_table <- table(datatib)
+basic_table
+cfm <- tidy(basic_table)
+cfm
+```
+
+
+
